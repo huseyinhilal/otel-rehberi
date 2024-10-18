@@ -1,15 +1,26 @@
+﻿using HotelService.Data;
+using HotelService.Services;  // HotelRepository için gerekli
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+// Swagger/OpenAPI yapılandırması
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Veritabanı bağlamını ekleyelim
+builder.Services.AddDbContext<HotelDbContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// HotelRepository'yi Dependency Injection sistemine ekleyelim
+builder.Services.AddScoped<HotelRepository>();
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// HTTP istek pipeline'ını yapılandıralım
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
