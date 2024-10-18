@@ -9,6 +9,7 @@ namespace HotelService.Data
         {
         }
 
-        public DbSet<Hotel> Hotels { get; set; }
+        public DbSet<Hotel> Hotels { get; set; }     // Hotels table
+        public DbSet<Report> Reports { get; set; }  // Reports table
     }
 }

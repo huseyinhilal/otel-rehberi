@@ -7,20 +7,22 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllers();
 
-// Swagger/OpenAPI yapılandırması
+// Swagger/OpenAPI
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Veritabanı bağlamını ekleyelim
+// Database connection
 builder.Services.AddDbContext<HotelDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// HotelRepository'yi Dependency Injection sistemine ekleyelim
+// Dependency Injection 
 builder.Services.AddScoped<HotelRepository>();
+builder.Services.AddScoped<ReportRepository>();
+
 
 var app = builder.Build();
 
-// HTTP istek pipeline'ını yapılandıralım
+// HTTP req. pipeline
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
