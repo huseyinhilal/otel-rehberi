@@ -17,17 +17,19 @@ namespace HotelService.Controllers
             _repository = repository;
         }
 
-        [HttpPost]
-        public async Task<IActionResult> CreateReport([FromBody] string location)
+        
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetReportById(Guid id)
         {
-            var report = new Report
+            var report = await _repository.GetReportByIdAsync(id);
+            if (report == null)
             {
-                Location = location
-            };
-            await _repository.AddReportAsync(report);
-            return Ok(report);
+                return NotFound(); // Rapor bulunamazsa 404 
+            }
+            return Ok(report); 
         }
 
+        // Tüm raporları listele
         [HttpGet]
         public async Task<IActionResult> GetAllReports()
         {
@@ -35,14 +37,14 @@ namespace HotelService.Controllers
             return Ok(reports);
         }
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetReportById(Guid id)
+        // Yeni rapor oluştur
+        [HttpPost]
+        public async Task<IActionResult> CreateReport([FromQuery] string location)
         {
-            var report = await _repository.GetReportByIdAsync(id);
-            if (report == null)
-                return NotFound();
-
+            var report = await _repository.GenerateReportAsync(location);
             return Ok(report);
         }
     }
+
+
 }
