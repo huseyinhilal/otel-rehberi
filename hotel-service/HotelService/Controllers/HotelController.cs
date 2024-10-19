@@ -1,6 +1,7 @@
 ﻿using HotelService.Data;
 using HotelService.Models;
 using HotelService.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
@@ -28,6 +29,7 @@ namespace HotelService.Controllers
         }
 
         // Create new hotel
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> CreateHotel([FromBody] Hotel hotel)
         {
