@@ -31,28 +31,56 @@ namespace HotelService.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateHotel([FromBody] Hotel hotel)
         {
-            Log.Information("A new hotel created: {@Hotel}", hotel); // Logging
-            _context.Hotels.Add(hotel);
-            await _context.SaveChangesAsync();
-            return CreatedAtAction(nameof(GetHotels), new { id = hotel.Id }, hotel);
+            using var transaction = await _context.Database.BeginTransactionAsync(); // begin Transaction
+            try
+            {
+                Log.Information("Attempt to create a new hotel: {@Hotel}", hotel);// Logging
+                _context.Hotels.Add(hotel);
+                await _context.SaveChangesAsync(); // Save Hotel
+
+                // Transaction commit (Success case)
+                await transaction.CommitAsync();
+                return CreatedAtAction(nameof(GetHotels), new { id = hotel.Id }, hotel);
+            }
+            catch (Exception ex)
+            {
+                // Rollback on Error
+                await transaction.RollbackAsync();
+                Log.Error("ERROR:CreateHotel An Error occured during Hotel Creation: {ErrorMessage}", ex.Message);// Logging
+                return StatusCode(500, "ERROR:CreateHotel .");
+            }
         }
 
         // Update hotel 
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateHotel(Guid id, [FromBody] Hotel updatedHotel)
         {
-            Log.Information("Updating the Hotel : {@id}", id); // Logging
-            var hotel = await _context.Hotels.FindAsync(id);
-            if (hotel == null) return NotFound();
+            using var transaction = await _context.Database.BeginTransactionAsync(); // begin Transaction
+            try
+            {
+                Log.Information("Attempt to Updating the Hotel : {@id}", id); // Logging
+                var hotel = await _context.Hotels.FindAsync(id);
+                if (hotel == null) return NotFound();
 
-            hotel.Name = updatedHotel.Name;
-            hotel.Location = updatedHotel.Location;
-            hotel.ContactPersonFirstName = updatedHotel.ContactPersonFirstName;
-            hotel.ContactPersonLastName = updatedHotel.ContactPersonLastName;
-            hotel.ContactInfo = updatedHotel.ContactInfo;
+                hotel.Name = updatedHotel.Name;
+                hotel.Location = updatedHotel.Location;
+                hotel.ContactPersonFirstName = updatedHotel.ContactPersonFirstName;
+                hotel.ContactPersonLastName = updatedHotel.ContactPersonLastName;
+                hotel.ContactInfo = updatedHotel.ContactInfo;
 
-            await _context.SaveChangesAsync();
-            return NoContent();
+                await _context.SaveChangesAsync();
+                // Transaction commit (Success case)
+                await transaction.CommitAsync();
+                return NoContent();
+            }
+            catch(Exception ex)
+            {
+
+                // Rollback on Error
+                await transaction.RollbackAsync();
+                Log.Error("ERROR:UpdateHotel An Error occured during Hotel Update: {ErrorMessage}", ex.Message);// Logging
+                return StatusCode(500, "ERROR:UpdateHotel .");
+            }
         }
 
         // Delete hotel
