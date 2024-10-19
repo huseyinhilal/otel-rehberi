@@ -13,7 +13,9 @@ builder.Services.AddSwaggerGen();
 
 // Database connection
 builder.Services.AddDbContext<HotelDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
+    new MySqlServerVersion(new Version(8, 0, 27))));
+
 
 // Dependency Injection 
 builder.Services.AddScoped<HotelRepository>();

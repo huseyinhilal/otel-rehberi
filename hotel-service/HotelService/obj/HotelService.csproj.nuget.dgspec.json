@@ -54,9 +54,9 @@
               "target": "Package",
               "version": "[6.0.0, )"
             },
-            "Microsoft.EntityFrameworkCore.Sqlite": {
+            "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
-              "version": "[6.0.30, )"
+              "version": "[6.0.2, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
