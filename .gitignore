@@ -25,6 +25,7 @@ Thumbs.db
 
 # Visual Studio specific files
 .vs/
+hotel-service/HotelService/.vs/
 
 # Package dependencies
 *.nupkg
