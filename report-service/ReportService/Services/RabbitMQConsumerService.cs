@@ -26,35 +26,73 @@ namespace ReportService.Services
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            using var connection = _factory.CreateConnection();
-            using var channel = connection.CreateModel();
-            channel.QueueDeclare(queue: "report_queue", durable: false, exclusive: false, autoDelete: false, arguments: null);
-
-            var consumer = new EventingBasicConsumer(channel);
-            consumer.Received += async (model, ea) =>
+            try
             {
-                var body = ea.Body.ToArray();
-                var message = Encoding.UTF8.GetString(body);
-                var report = JsonConvert.DeserializeObject<Report>(message);
+                using var connection = _factory.CreateConnection();
+                using var channel = connection.CreateModel();
+                Console.WriteLine("RabbitMQ bağlantısı başarılı, kuyruk dinleniyor...");
 
-                using var scope = _scopeFactory.CreateScope();
-                var dbContext = scope.ServiceProvider.GetRequiredService<ReportDbContext>();
+                channel.QueueDeclare(queue: "report_queue", durable: false, exclusive: false, autoDelete: false, arguments: null);
+                Console.WriteLine("Kuyruk başarıyla tanımlandı: report_queue");
 
-                // Simüle olarak eklenen gecikme
-                await Task.Delay(5000); // Raporun hazırlanma süresi
-
-                // Raporun durumu güncelleniyor
-                var reportInDb = await dbContext.Reports.FindAsync(report.Id);
-                if (reportInDb != null)
+                var consumer = new EventingBasicConsumer(channel);
+                consumer.Received += async (model, ea) =>
                 {
-                    reportInDb.Status = "Tamamlandı";
-                    await dbContext.SaveChangesAsync();
+                    Console.WriteLine("Mesaj alınıyor...");
+                    var body = ea.Body.ToArray();
+                    var message = Encoding.UTF8.GetString(body);
+                    Console.WriteLine("Mesaj içeriği: " + message);
+
+                    var report = JsonConvert.DeserializeObject<Report>(message);
+                    Console.WriteLine($"Deserializasyon başarılı, rapor id: {report.Id}");
+
+                    try
+                    {
+                        using var scope = _scopeFactory.CreateScope();
+                        var dbContext = scope.ServiceProvider.GetRequiredService<ReportDbContext>();
+
+                        // Simüle olarak eklenen gecikme
+                        await Task.Delay(5000); // Raporun hazırlanma süresi
+                        Console.WriteLine("Rapor hazırlama süresi tamamlandı.");
+
+                        // Raporun durumu güncelleniyor
+                        var reportInDb = await dbContext.Reports.FindAsync(report.Id);
+                        if (reportInDb != null)
+                        {
+                            reportInDb.Status = "Tamamlandı";
+                            await dbContext.SaveChangesAsync();
+                            Console.WriteLine($"Rapor başarıyla güncellendi: {reportInDb.Id}");
+                        }
+                        else
+                        {
+                            Console.WriteLine($"Rapor veritabanında bulunamadı: {report.Id}");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Veritabanı işlemi sırasında hata oluştu: {ex.Message}");
+                    }
+
+                    // Mesaj işlendikten sonra onayla
+                    channel.BasicAck(deliveryTag: ea.DeliveryTag, multiple: false);
+                    Console.WriteLine("Mesaj başarıyla işlenip onaylandı.");
+                };
+
+                while (!stoppingToken.IsCancellationRequested)
+                {
+                    channel.BasicConsume(queue: "report_queue", autoAck: false, consumer: consumer);
+                    Console.WriteLine("Kuyruk dinleniyor...");
+
+                    // Arka planda çalışmaya devam etmek için kısa bir bekleme
+                    await Task.Delay(1000, stoppingToken);
                 }
-            };
 
-            channel.BasicConsume(queue: "report_queue", autoAck: true, consumer: consumer);
-
-            await Task.CompletedTask;
+                await Task.CompletedTask;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"RabbitMQ bağlantısı sırasında hata oluştu: {ex.Message}");
+            }
         }
     }
 }

@@ -268,3 +268,47 @@ RabbitMQ.Client.Exceptions.BrokerUnreachableException: None of the specified end
 2024-10-20 01:21:44.118 +03:00 [INF] Executed action HotelService.Controllers.ReportController.RequestReport (HotelService) in 274.4929ms
 2024-10-20 01:21:44.120 +03:00 [INF] Executed endpoint 'HotelService.Controllers.ReportController.RequestReport (HotelService)'
 2024-10-20 01:21:44.120 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5000/api/Report application/json 7 - 200 - application/json;+charset=utf-8 345.9432ms
+2024-10-20 13:04:04.478 +03:00 [INF] User profile is available. Using 'C:\Users\Huseyin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-10-20 13:04:04.782 +03:00 [INF] Now listening on: https://localhost:5000
+2024-10-20 13:04:04.783 +03:00 [INF] Now listening on: http://localhost:5001
+2024-10-20 13:04:04.786 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-20 13:04:04.786 +03:00 [INF] Hosting environment: Development
+2024-10-20 13:04:04.787 +03:00 [INF] Content root path: C:\Users\Huseyin\otel-rehberi\hotel-service\HotelService\
+2024-10-20 13:04:05.357 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/swagger/index.html - -
+2024-10-20 13:04:05.723 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/swagger/index.html - - - 200 - text/html;charset=utf-8 369.0460ms
+2024-10-20 13:04:05.725 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/_framework/aspnetcore-browser-refresh.js - -
+2024-10-20 13:04:05.731 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 6.0784ms
+2024-10-20 13:04:06.586 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/_vs/browserLink - -
+2024-10-20 13:04:06.655 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 69.6842ms
+2024-10-20 13:04:06.841 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/swagger/index.html - -
+2024-10-20 13:04:06.844 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/swagger/index.html - - - 200 - text/html;charset=utf-8 2.8160ms
+2024-10-20 13:04:07.614 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/swagger/v1/swagger.json - -
+2024-10-20 13:04:07.726 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 111.3771ms
+2024-10-20 13:05:17.785 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5000/api/Report application/json 10
+2024-10-20 13:05:17.848 +03:00 [INF] Executing endpoint 'HotelService.Controllers.ReportController.RequestReport (HotelService)'
+2024-10-20 13:05:17.869 +03:00 [INF] Route matched with {action = "RequestReport", controller = "Report"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult RequestReport(System.String) on controller HotelService.Controllers.ReportController (HotelService).
+2024-10-20 13:05:18.198 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-10-20 13:05:18.211 +03:00 [INF] Executed action HotelService.Controllers.ReportController.RequestReport (HotelService) in 338.1121ms
+2024-10-20 13:05:18.213 +03:00 [INF] Executed endpoint 'HotelService.Controllers.ReportController.RequestReport (HotelService)'
+2024-10-20 13:05:18.214 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5000/api/Report application/json 10 - 200 - application/json;+charset=utf-8 429.5161ms
+2024-10-20 13:13:16.199 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5000/api/Report application/json 10
+2024-10-20 13:13:16.201 +03:00 [INF] Executing endpoint 'HotelService.Controllers.ReportController.RequestReport (HotelService)'
+2024-10-20 13:13:16.201 +03:00 [INF] Route matched with {action = "RequestReport", controller = "Report"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult RequestReport(System.String) on controller HotelService.Controllers.ReportController (HotelService).
+2024-10-20 13:13:16.211 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-10-20 13:13:16.212 +03:00 [INF] Executed action HotelService.Controllers.ReportController.RequestReport (HotelService) in 9.5763ms
+2024-10-20 13:13:16.214 +03:00 [INF] Executed endpoint 'HotelService.Controllers.ReportController.RequestReport (HotelService)'
+2024-10-20 13:13:16.215 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5000/api/Report application/json 10 - 200 - application/json;+charset=utf-8 16.2525ms
+2024-10-20 13:17:01.853 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5000/api/Report application/json 10
+2024-10-20 13:17:01.859 +03:00 [INF] Executing endpoint 'HotelService.Controllers.ReportController.RequestReport (HotelService)'
+2024-10-20 13:17:01.861 +03:00 [INF] Route matched with {action = "RequestReport", controller = "Report"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult RequestReport(System.String) on controller HotelService.Controllers.ReportController (HotelService).
+2024-10-20 13:17:01.872 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-10-20 13:17:01.874 +03:00 [INF] Executed action HotelService.Controllers.ReportController.RequestReport (HotelService) in 11.4157ms
+2024-10-20 13:17:01.875 +03:00 [INF] Executed endpoint 'HotelService.Controllers.ReportController.RequestReport (HotelService)'
+2024-10-20 13:17:01.876 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5000/api/Report application/json 10 - 200 - application/json;+charset=utf-8 23.1775ms
+2024-10-20 13:18:25.256 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5000/api/Report application/json 10
+2024-10-20 13:18:25.260 +03:00 [INF] Executing endpoint 'HotelService.Controllers.ReportController.RequestReport (HotelService)'
+2024-10-20 13:18:25.262 +03:00 [INF] Route matched with {action = "RequestReport", controller = "Report"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult RequestReport(System.String) on controller HotelService.Controllers.ReportController (HotelService).
+2024-10-20 13:18:25.275 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-10-20 13:18:25.277 +03:00 [INF] Executed action HotelService.Controllers.ReportController.RequestReport (HotelService) in 13.8325ms
+2024-10-20 13:18:25.278 +03:00 [INF] Executed endpoint 'HotelService.Controllers.ReportController.RequestReport (HotelService)'
+2024-10-20 13:18:25.279 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5000/api/Report application/json 10 - 200 - application/json;+charset=utf-8 22.8763ms
