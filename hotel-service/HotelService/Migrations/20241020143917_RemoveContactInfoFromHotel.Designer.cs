@@ -3,6 +3,7 @@ using System;
 using HotelService.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HotelService.Migrations
 {
     [DbContext(typeof(HotelDbContext))]
-    partial class HotelDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241020143917_RemoveContactInfoFromHotel")]
+    partial class RemoveContactInfoFromHotel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -82,7 +84,7 @@ namespace HotelService.Migrations
             modelBuilder.Entity("HotelService.Models.CommunicationInfo", b =>
                 {
                     b.HasOne("HotelService.Models.Hotel", "Hotel")
-                        .WithMany("CommunicationInfos")
+                        .WithMany("CommunicationInfo")
                         .HasForeignKey("HotelId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -92,7 +94,7 @@ namespace HotelService.Migrations
 
             modelBuilder.Entity("HotelService.Models.Hotel", b =>
                 {
-                    b.Navigation("CommunicationInfos");
+                    b.Navigation("CommunicationInfo");
                 });
 #pragma warning restore 612, 618
         }

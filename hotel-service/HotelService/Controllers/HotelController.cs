@@ -22,11 +22,26 @@ namespace HotelService.Controllers
 
         // List all hotels
         [HttpGet]
-        public async Task<IActionResult> GetHotels()
+        public async Task<IActionResult> GetHotels(int page = 1, int pageSize = 10)
         {
-            var hotels = await _context.Hotels.ToListAsync();
-            return Ok(hotels);
+            var totalRecords = await _context.Hotels.CountAsync();
+            var hotels = await _context.Hotels
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+
+            var response = new
+            {
+                TotalRecords = totalRecords,
+                Page = page,
+                PageSize = pageSize,
+                TotalPages = (int)Math.Ceiling(totalRecords / (double)pageSize),
+                Hotels = hotels
+            };
+
+            return Ok(response);
         }
+
 
         // Create new hotel
         [Authorize]
@@ -37,6 +52,17 @@ namespace HotelService.Controllers
             try
             {
                 Log.Information("Attempt to create a new hotel: {@Hotel}", hotel);// Logging
+
+                // CommunicationInfo'yu otel ile ilişkilendirme
+                if (hotel.CommunicationInfos != null && hotel.CommunicationInfos.Any())
+                {
+                    foreach (var communicationInfo in hotel.CommunicationInfos)
+                    {
+                        // CommunicationInfo içindeki Hotel nesnesini atayın
+                        communicationInfo.Hotel = hotel;
+                    }
+                }
+
                 _context.Hotels.Add(hotel);
                 await _context.SaveChangesAsync(); // Save Hotel
 
@@ -68,7 +94,6 @@ namespace HotelService.Controllers
                 hotel.Location = updatedHotel.Location;
                 hotel.ContactPersonFirstName = updatedHotel.ContactPersonFirstName;
                 hotel.ContactPersonLastName = updatedHotel.ContactPersonLastName;
-                hotel.ContactInfo = updatedHotel.ContactInfo;
 
                 await _context.SaveChangesAsync();
                 // Transaction commit (Success case)

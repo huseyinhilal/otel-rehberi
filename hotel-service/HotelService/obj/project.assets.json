@@ -127,6 +127,19 @@
           "lib/net6.0/Microsoft.EntityFrameworkCore.InMemory.dll": {}
         }
       },
+      "Microsoft.EntityFrameworkCore.Proxies/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Castle.Core": "4.4.1",
+          "Microsoft.EntityFrameworkCore": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/Microsoft.EntityFrameworkCore.Proxies.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.EntityFrameworkCore.Proxies.dll": {}
+        }
+      },
       "Microsoft.EntityFrameworkCore.Relational/6.0.7": {
         "type": "package",
         "dependencies": {
@@ -1429,6 +1442,20 @@
         "lib/net6.0/Microsoft.EntityFrameworkCore.InMemory.xml",
         "microsoft.entityframeworkcore.inmemory.6.0.0.nupkg.sha512",
         "microsoft.entityframeworkcore.inmemory.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.Proxies/6.0.0": {
+      "sha512": "kCwhtl/msXMSCPjvwhzUdw6jxN3pYckANwEZwG2kBtgjw8NSsq4fmurIC/Tz4r7RK03WcDhyaXOrJcrmQuwkrA==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.proxies/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/net6.0/Microsoft.EntityFrameworkCore.Proxies.dll",
+        "lib/net6.0/Microsoft.EntityFrameworkCore.Proxies.xml",
+        "microsoft.entityframeworkcore.proxies.6.0.0.nupkg.sha512",
+        "microsoft.entityframeworkcore.proxies.nuspec"
       ]
     },
     "Microsoft.EntityFrameworkCore.Relational/6.0.7": {
@@ -3159,6 +3186,7 @@
       "Microsoft.EntityFrameworkCore >= 6.0.30",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.0",
       "Microsoft.EntityFrameworkCore.InMemory >= 6.0.0",
+      "Microsoft.EntityFrameworkCore.Proxies >= 6.0.0",
       "Microsoft.IdentityModel.Tokens >= 6.15.0",
       "Microsoft.NET.Test.Sdk >= 17.11.1",
       "Moq >= 4.20.72",
@@ -3233,6 +3261,10 @@
             "version": "[6.0.0, )"
           },
           "Microsoft.EntityFrameworkCore.InMemory": {
+            "target": "Package",
+            "version": "[6.0.0, )"
+          },
+          "Microsoft.EntityFrameworkCore.Proxies": {
             "target": "Package",
             "version": "[6.0.0, )"
           },
