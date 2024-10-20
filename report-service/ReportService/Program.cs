@@ -23,6 +23,9 @@ builder.Services.AddDbContext<ReportDbContext>(options =>
 builder.Services.AddSingleton<RabbitMQProducerService>();
 builder.Services.AddHostedService<RabbitMQConsumerService>();
 
+builder.Services.AddHttpClient<HotelServiceClient>();
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

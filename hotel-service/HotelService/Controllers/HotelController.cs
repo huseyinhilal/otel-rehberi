@@ -106,6 +106,28 @@ namespace HotelService.Controllers
             if (hotel == null) return NotFound();
             return Ok(hotel);
         }
+
+        // Get hotel by location
+        [HttpGet("bylocation")]
+        public async Task<IActionResult> GetHotelsByLocation([FromQuery] string location)
+        {
+            if (string.IsNullOrEmpty(location))
+            {
+                return BadRequest("Location parametresi zorunludur.");
+            }
+
+            // Veritabanından ilgili konuma ait otelleri getirir
+            var hotels = await _context.Hotels
+                                       .Where(h => h.Location == location)
+                                       .ToListAsync();
+
+            if (hotels == null || !hotels.Any())
+            {
+                return NotFound($"'{location}' konumunda otel bulunamadı.");
+            }
+
+            return Ok(hotels); // İlgili otelleri döner
+        }
     }
 
 }

@@ -19,16 +19,33 @@ namespace ReportService.Controllers
             _rabbitMQProducer = rabbitMQProducer;
         }
 
-        [HttpPost]
-        public async Task<IActionResult> CreateReport([FromBody] Report report)
+       
+        [HttpPost("bylocation")]
+        public async Task<IActionResult> RequestReportByLocation([FromBody] string location)
         {
+            if (string.IsNullOrEmpty(location))
+            {
+                return BadRequest("Konum bilgisi zorunludur.");
+            }
+
+            var reportId = Guid.NewGuid();
+            // Raporu hemen "Hazırlanıyor" durumuyla kaydediyoruz
+            var report = new Report
+            {
+                Id=reportId,
+                Location = location,
+                Status = "Hazırlanıyor", // İlk durum "Hazırlanıyor"
+                RequestedAt = DateTime.Now
+            };
+
             _dbContext.Reports.Add(report);
-            await _dbContext.SaveChangesAsync();
+            await _dbContext.SaveChangesAsync(); // Veritabanına kaydediyoruz
 
-            // Raporu RabbitMQ kuyruğuna gönder
-            _rabbitMQProducer.SendReportToQueue(report);
 
-            return Ok(report);
+            // RabbitMQ kuyruğuna rapor isteğini gönder
+            _rabbitMQProducer.SendReportToQueue(reportId, location);
+
+            return Ok(new { Message = "Rapor oluşturma isteği kuyruğa gönderildi.", Location = location });
         }
 
         [HttpGet]
@@ -36,6 +53,22 @@ namespace ReportService.Controllers
         {
             var reports = await _dbContext.Reports.ToListAsync();
             return Ok(reports);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetReportById(Guid id)
+        {
+            // Veritabanından ReportId'ye göre raporu bul
+            var report = await _dbContext.Reports.FirstOrDefaultAsync(r => r.Id == id);
+
+            // Eğer rapor bulunamazsa 404 döndür
+            if (report == null)
+            {
+                return NotFound(new { Message = "Rapor bulunamadı." });
+            }
+
+            // Raporu başarıyla döndür
+            return Ok(report);
         }
     }
 }

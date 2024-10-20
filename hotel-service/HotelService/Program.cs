@@ -38,9 +38,6 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-// RabbitMQ Producer Servisini ekle
-builder.Services.AddSingleton<RabbitMQProducerService>();
-
 // Add services to the container.
 builder.Services.AddControllers();
 
