@@ -38,6 +38,8 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
+// RabbitMQ Producer Servisini ekle
+builder.Services.AddSingleton<RabbitMQProducerService>();
 
 // Add services to the container.
 builder.Services.AddControllers();
@@ -87,7 +89,6 @@ builder.Services.AddDbContext<HotelDbContext>(options =>
 
 // Dependency Injection 
 builder.Services.AddScoped<HotelRepository>();
-builder.Services.AddScoped<ReportRepository>();
 
 
 var app = builder.Build();

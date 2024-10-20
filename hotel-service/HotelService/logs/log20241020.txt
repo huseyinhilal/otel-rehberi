@@ -1,0 +1,270 @@
+2024-10-20 00:35:18.887 +03:00 [INF] User profile is available. Using 'C:\Users\Huseyin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-10-20 00:35:20.093 +03:00 [INF] Now listening on: https://localhost:5000
+2024-10-20 00:35:20.096 +03:00 [INF] Now listening on: http://localhost:5001
+2024-10-20 00:35:20.101 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-20 00:35:20.102 +03:00 [INF] Hosting environment: Development
+2024-10-20 00:35:20.103 +03:00 [INF] Content root path: C:\Users\Huseyin\otel-rehberi\hotel-service\HotelService\
+2024-10-20 00:35:24.935 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/swagger/index.html - -
+2024-10-20 00:35:25.409 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/swagger/index.html - - - 200 - text/html;charset=utf-8 476.9321ms
+2024-10-20 00:35:25.504 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/_framework/aspnetcore-browser-refresh.js - -
+2024-10-20 00:35:25.517 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 12.4533ms
+2024-10-20 00:35:26.486 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/_vs/browserLink - -
+2024-10-20 00:35:26.573 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 86.7465ms
+2024-10-20 00:35:26.593 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/swagger/index.html - -
+2024-10-20 00:35:26.598 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/swagger/index.html - - - 200 - text/html;charset=utf-8 4.2023ms
+2024-10-20 00:35:26.975 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/swagger/v1/swagger.json - -
+2024-10-20 00:35:27.082 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 106.3523ms
+2024-10-20 01:11:13.834 +03:00 [INF] User profile is available. Using 'C:\Users\Huseyin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-10-20 01:11:14.248 +03:00 [INF] Now listening on: https://localhost:5000
+2024-10-20 01:11:14.249 +03:00 [INF] Now listening on: http://localhost:5001
+2024-10-20 01:11:14.253 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-20 01:11:14.254 +03:00 [INF] Hosting environment: Development
+2024-10-20 01:11:14.255 +03:00 [INF] Content root path: C:\Users\Huseyin\otel-rehberi\hotel-service\HotelService\
+2024-10-20 01:11:15.092 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/swagger/index.html - -
+2024-10-20 01:11:15.454 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/swagger/index.html - - - 200 - text/html;charset=utf-8 365.6159ms
+2024-10-20 01:11:15.454 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/_framework/aspnetcore-browser-refresh.js - -
+2024-10-20 01:11:15.466 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 11.4968ms
+2024-10-20 01:11:16.368 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/_vs/browserLink - -
+2024-10-20 01:11:16.387 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 18.4471ms
+2024-10-20 01:11:16.551 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/swagger/index.html - -
+2024-10-20 01:11:16.553 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/swagger/index.html - - - 200 - text/html;charset=utf-8 1.9909ms
+2024-10-20 01:11:16.786 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/swagger/v1/swagger.json - -
+2024-10-20 01:11:16.859 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 73.3171ms
+2024-10-20 01:11:35.919 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5000/api/Report application/json 28
+2024-10-20 01:11:35.981 +03:00 [INF] Executing endpoint 'HotelService.Controllers.ReportController.RequestReport (HotelService)'
+2024-10-20 01:11:36.002 +03:00 [INF] Route matched with {action = "RequestReport", controller = "Report"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult RequestReport(System.String) on controller HotelService.Controllers.ReportController (HotelService).
+2024-10-20 01:11:36.118 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2024-10-20 01:11:36.134 +03:00 [INF] Executed action HotelService.Controllers.ReportController.RequestReport (HotelService) in 125.4434ms
+2024-10-20 01:11:36.137 +03:00 [INF] Executed endpoint 'HotelService.Controllers.ReportController.RequestReport (HotelService)'
+2024-10-20 01:11:36.137 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5000/api/Report application/json 28 - 400 - application/problem+json;+charset=utf-8 218.1306ms
+2024-10-20 01:12:08.247 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5000/api/Report application/json 8
+2024-10-20 01:12:08.248 +03:00 [INF] Executing endpoint 'HotelService.Controllers.ReportController.RequestReport (HotelService)'
+2024-10-20 01:12:08.249 +03:00 [INF] Route matched with {action = "RequestReport", controller = "Report"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult RequestReport(System.String) on controller HotelService.Controllers.ReportController (HotelService).
+2024-10-20 01:12:08.258 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2024-10-20 01:12:08.259 +03:00 [INF] Executed action HotelService.Controllers.ReportController.RequestReport (HotelService) in 5.0459ms
+2024-10-20 01:12:08.263 +03:00 [INF] Executed endpoint 'HotelService.Controllers.ReportController.RequestReport (HotelService)'
+2024-10-20 01:12:08.264 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5000/api/Report application/json 8 - 400 - application/problem+json;+charset=utf-8 16.9476ms
+2024-10-20 01:12:16.312 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5000/api/Report application/json 10
+2024-10-20 01:12:16.314 +03:00 [INF] Executing endpoint 'HotelService.Controllers.ReportController.RequestReport (HotelService)'
+2024-10-20 01:12:16.316 +03:00 [INF] Route matched with {action = "RequestReport", controller = "Report"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult RequestReport(System.String) on controller HotelService.Controllers.ReportController (HotelService).
+2024-10-20 01:13:51.248 +03:00 [INF] User profile is available. Using 'C:\Users\Huseyin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-10-20 01:13:51.492 +03:00 [INF] Now listening on: https://localhost:5000
+2024-10-20 01:13:51.494 +03:00 [INF] Now listening on: http://localhost:5001
+2024-10-20 01:13:51.498 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-20 01:13:51.499 +03:00 [INF] Hosting environment: Development
+2024-10-20 01:13:51.500 +03:00 [INF] Content root path: C:\Users\Huseyin\otel-rehberi\hotel-service\HotelService\
+2024-10-20 01:13:52.153 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/swagger/index.html - -
+2024-10-20 01:13:52.423 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/swagger/index.html - - - 200 - text/html;charset=utf-8 273.0696ms
+2024-10-20 01:13:52.424 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/_framework/aspnetcore-browser-refresh.js - -
+2024-10-20 01:13:52.433 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 9.0486ms
+2024-10-20 01:13:53.199 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/_vs/browserLink - -
+2024-10-20 01:13:53.215 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 15.8319ms
+2024-10-20 01:13:53.290 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/swagger/index.html - -
+2024-10-20 01:13:53.292 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/swagger/index.html - - - 200 - text/html;charset=utf-8 1.6913ms
+2024-10-20 01:13:53.551 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/swagger/v1/swagger.json - -
+2024-10-20 01:13:53.639 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 87.6522ms
+2024-10-20 01:17:04.787 +03:00 [INF] User profile is available. Using 'C:\Users\Huseyin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-10-20 01:17:05.121 +03:00 [INF] Now listening on: https://localhost:5000
+2024-10-20 01:17:05.122 +03:00 [INF] Now listening on: http://localhost:5001
+2024-10-20 01:17:05.125 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-20 01:17:05.126 +03:00 [INF] Hosting environment: Development
+2024-10-20 01:17:05.126 +03:00 [INF] Content root path: C:\Users\Huseyin\otel-rehberi\hotel-service\HotelService\
+2024-10-20 01:17:05.572 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/swagger/index.html - -
+2024-10-20 01:17:05.873 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/swagger/index.html - - - 200 - text/html;charset=utf-8 303.3719ms
+2024-10-20 01:17:05.876 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/_framework/aspnetcore-browser-refresh.js - -
+2024-10-20 01:17:05.886 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 9.3701ms
+2024-10-20 01:17:06.729 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/_vs/browserLink - -
+2024-10-20 01:17:06.748 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 18.8455ms
+2024-10-20 01:17:06.812 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/swagger/index.html - -
+2024-10-20 01:17:06.813 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/swagger/index.html - - - 200 - text/html;charset=utf-8 1.6608ms
+2024-10-20 01:17:07.078 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/swagger/v1/swagger.json - -
+2024-10-20 01:17:07.149 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 71.1259ms
+2024-10-20 01:17:55.228 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5000/api/Report application/json 7
+2024-10-20 01:17:55.282 +03:00 [INF] Executing endpoint 'HotelService.Controllers.ReportController.RequestReport (HotelService)'
+2024-10-20 01:17:55.303 +03:00 [INF] Route matched with {action = "RequestReport", controller = "Report"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult RequestReport(System.String) on controller HotelService.Controllers.ReportController (HotelService).
+2024-10-20 01:18:13.470 +03:00 [INF] Executed action HotelService.Controllers.ReportController.RequestReport (HotelService) in 18162.7202ms
+2024-10-20 01:18:13.474 +03:00 [INF] Executed endpoint 'HotelService.Controllers.ReportController.RequestReport (HotelService)'
+2024-10-20 01:18:13.478 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+RabbitMQ.Client.Exceptions.BrokerUnreachableException: None of the specified endpoints were reachable
+ ---> System.AggregateException: One or more errors occurred. (Connection failed)
+ ---> RabbitMQ.Client.Exceptions.ConnectFailureException: Connection failed
+ ---> System.ArgumentNullException: Value cannot be null. (Parameter 'hostName')
+   at System.Net.Dns.GetHostEntryOrAddressesCoreAsync(String hostName, Boolean justReturnParsedIp, Boolean throwOnIIPAny, Boolean justAddresses, AddressFamily family, CancellationToken cancellationToken)
+   at System.Net.Dns.GetHostAddressesAsync(String hostNameOrAddress)
+   at RabbitMQ.Client.Impl.TcpClientAdapter.ConnectAsync(String host, Int32 port)
+   at RabbitMQ.Client.Impl.TaskExtensions.TimeoutAfter(Task task, TimeSpan timeout)
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectOrFail(ITcpClient socket, AmqpTcpEndpoint endpoint, TimeSpan timeout)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectOrFail(ITcpClient socket, AmqpTcpEndpoint endpoint, TimeSpan timeout)
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectUsingAddressFamily(AmqpTcpEndpoint endpoint, Func`2 socketFactory, TimeSpan timeout, AddressFamily family)
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectUsingIPv4(AmqpTcpEndpoint endpoint, Func`2 socketFactory, TimeSpan timeout)
+   at RabbitMQ.Client.Impl.SocketFrameHandler..ctor(AmqpTcpEndpoint endpoint, Func`2 socketFactory, TimeSpan connectionTimeout, TimeSpan readTimeout, TimeSpan writeTimeout)
+   at RabbitMQ.Client.Framing.Impl.IProtocolExtensions.CreateFrameHandler(IProtocol protocol, AmqpTcpEndpoint endpoint, ArrayPool`1 pool, Func`2 socketFactory, TimeSpan connectionTimeout, TimeSpan readTimeout, TimeSpan writeTimeout)
+   at RabbitMQ.Client.ConnectionFactory.CreateFrameHandler(AmqpTcpEndpoint endpoint)
+   at RabbitMQ.Client.EndpointResolverExtensions.SelectOne[T](IEndpointResolver resolver, Func`2 selector)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.EndpointResolverExtensions.SelectOne[T](IEndpointResolver resolver, Func`2 selector)
+   at RabbitMQ.Client.Framing.Impl.AutorecoveringConnection.Init(IEndpointResolver endpoints)
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection(IEndpointResolver endpointResolver, String clientProvidedName)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection(IEndpointResolver endpointResolver, String clientProvidedName)
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection(String clientProvidedName)
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection()
+   at HotelService.Services.RabbitMQProducerService.SendReportRequestToQueue(String location) in C:\Users\Huseyin\otel-rehberi\hotel-service\HotelService\Services\RabbitMQProducerService.cs:line 23
+   at HotelService.Controllers.ReportController.RequestReport(String location) in C:\Users\Huseyin\otel-rehberi\hotel-service\HotelService\Controllers\ReportController.cs:line 20
+   at lambda_method2(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2024-10-20 01:18:13.564 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5000/api/Report application/json 7 - 500 - text/plain;+charset=utf-8 18337.9700ms
+2024-10-20 01:18:42.412 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5000/api/Report application/json 29
+2024-10-20 01:18:42.414 +03:00 [INF] Executing endpoint 'HotelService.Controllers.ReportController.RequestReport (HotelService)'
+2024-10-20 01:18:42.419 +03:00 [INF] Route matched with {action = "RequestReport", controller = "Report"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult RequestReport(System.String) on controller HotelService.Controllers.ReportController (HotelService).
+2024-10-20 01:18:42.428 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2024-10-20 01:18:42.438 +03:00 [INF] Executed action HotelService.Controllers.ReportController.RequestReport (HotelService) in 17.6009ms
+2024-10-20 01:18:42.441 +03:00 [INF] Executed endpoint 'HotelService.Controllers.ReportController.RequestReport (HotelService)'
+2024-10-20 01:18:42.442 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5000/api/Report application/json 29 - 400 - application/problem+json;+charset=utf-8 29.9519ms
+2024-10-20 01:18:53.298 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5000/api/Report application/json 7
+2024-10-20 01:18:53.300 +03:00 [INF] Executing endpoint 'HotelService.Controllers.ReportController.RequestReport (HotelService)'
+2024-10-20 01:18:53.301 +03:00 [INF] Route matched with {action = "RequestReport", controller = "Report"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult RequestReport(System.String) on controller HotelService.Controllers.ReportController (HotelService).
+2024-10-20 01:21:14.364 +03:00 [INF] Executed action HotelService.Controllers.ReportController.RequestReport (HotelService) in 141061.4778ms
+2024-10-20 01:21:14.365 +03:00 [INF] Executed endpoint 'HotelService.Controllers.ReportController.RequestReport (HotelService)'
+2024-10-20 01:21:14.366 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+RabbitMQ.Client.Exceptions.BrokerUnreachableException: None of the specified endpoints were reachable
+ ---> System.AggregateException: One or more errors occurred. (Connection failed)
+ ---> RabbitMQ.Client.Exceptions.ConnectFailureException: Connection failed
+ ---> System.ArgumentNullException: Value cannot be null. (Parameter 'hostName')
+   at System.Net.Dns.GetHostEntryOrAddressesCoreAsync(String hostName, Boolean justReturnParsedIp, Boolean throwOnIIPAny, Boolean justAddresses, AddressFamily family, CancellationToken cancellationToken)
+   at System.Net.Dns.GetHostAddressesAsync(String hostNameOrAddress)
+   at RabbitMQ.Client.Impl.TcpClientAdapter.ConnectAsync(String host, Int32 port)
+   at RabbitMQ.Client.Impl.TaskExtensions.TimeoutAfter(Task task, TimeSpan timeout)
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectOrFail(ITcpClient socket, AmqpTcpEndpoint endpoint, TimeSpan timeout)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectOrFail(ITcpClient socket, AmqpTcpEndpoint endpoint, TimeSpan timeout)
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectUsingAddressFamily(AmqpTcpEndpoint endpoint, Func`2 socketFactory, TimeSpan timeout, AddressFamily family)
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectUsingIPv4(AmqpTcpEndpoint endpoint, Func`2 socketFactory, TimeSpan timeout)
+   at RabbitMQ.Client.Impl.SocketFrameHandler..ctor(AmqpTcpEndpoint endpoint, Func`2 socketFactory, TimeSpan connectionTimeout, TimeSpan readTimeout, TimeSpan writeTimeout)
+   at RabbitMQ.Client.Framing.Impl.IProtocolExtensions.CreateFrameHandler(IProtocol protocol, AmqpTcpEndpoint endpoint, ArrayPool`1 pool, Func`2 socketFactory, TimeSpan connectionTimeout, TimeSpan readTimeout, TimeSpan writeTimeout)
+   at RabbitMQ.Client.ConnectionFactory.CreateFrameHandler(AmqpTcpEndpoint endpoint)
+   at RabbitMQ.Client.EndpointResolverExtensions.SelectOne[T](IEndpointResolver resolver, Func`2 selector)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.EndpointResolverExtensions.SelectOne[T](IEndpointResolver resolver, Func`2 selector)
+   at RabbitMQ.Client.Framing.Impl.AutorecoveringConnection.Init(IEndpointResolver endpoints)
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection(IEndpointResolver endpointResolver, String clientProvidedName)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection(IEndpointResolver endpointResolver, String clientProvidedName)
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection(String clientProvidedName)
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection()
+   at HotelService.Services.RabbitMQProducerService.SendReportRequestToQueue(String location) in C:\Users\Huseyin\otel-rehberi\hotel-service\HotelService\Services\RabbitMQProducerService.cs:line 23
+   at HotelService.Controllers.ReportController.RequestReport(String location) in C:\Users\Huseyin\otel-rehberi\hotel-service\HotelService\Controllers\ReportController.cs:line 20
+   at lambda_method2(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2024-10-20 01:21:14.383 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5000/api/Report application/json 7 - 500 - text/plain;+charset=utf-8 141085.2855ms
+2024-10-20 01:21:19.514 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5000/api/Report application/json 7
+2024-10-20 01:21:19.516 +03:00 [INF] Executing endpoint 'HotelService.Controllers.ReportController.RequestReport (HotelService)'
+2024-10-20 01:21:19.518 +03:00 [INF] Route matched with {action = "RequestReport", controller = "Report"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult RequestReport(System.String) on controller HotelService.Controllers.ReportController (HotelService).
+2024-10-20 01:21:25.090 +03:00 [INF] Executed action HotelService.Controllers.ReportController.RequestReport (HotelService) in 5570.2638ms
+2024-10-20 01:21:25.092 +03:00 [INF] Executed endpoint 'HotelService.Controllers.ReportController.RequestReport (HotelService)'
+2024-10-20 01:21:25.094 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+RabbitMQ.Client.Exceptions.BrokerUnreachableException: None of the specified endpoints were reachable
+ ---> System.AggregateException: One or more errors occurred. (Connection failed)
+ ---> RabbitMQ.Client.Exceptions.ConnectFailureException: Connection failed
+ ---> System.ArgumentNullException: Value cannot be null. (Parameter 'hostName')
+   at System.Net.Dns.GetHostEntryOrAddressesCoreAsync(String hostName, Boolean justReturnParsedIp, Boolean throwOnIIPAny, Boolean justAddresses, AddressFamily family, CancellationToken cancellationToken)
+   at System.Net.Dns.GetHostAddressesAsync(String hostNameOrAddress)
+   at RabbitMQ.Client.Impl.TcpClientAdapter.ConnectAsync(String host, Int32 port)
+   at RabbitMQ.Client.Impl.TaskExtensions.TimeoutAfter(Task task, TimeSpan timeout)
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectOrFail(ITcpClient socket, AmqpTcpEndpoint endpoint, TimeSpan timeout)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectOrFail(ITcpClient socket, AmqpTcpEndpoint endpoint, TimeSpan timeout)
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectUsingAddressFamily(AmqpTcpEndpoint endpoint, Func`2 socketFactory, TimeSpan timeout, AddressFamily family)
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectUsingIPv4(AmqpTcpEndpoint endpoint, Func`2 socketFactory, TimeSpan timeout)
+   at RabbitMQ.Client.Impl.SocketFrameHandler..ctor(AmqpTcpEndpoint endpoint, Func`2 socketFactory, TimeSpan connectionTimeout, TimeSpan readTimeout, TimeSpan writeTimeout)
+   at RabbitMQ.Client.Framing.Impl.IProtocolExtensions.CreateFrameHandler(IProtocol protocol, AmqpTcpEndpoint endpoint, ArrayPool`1 pool, Func`2 socketFactory, TimeSpan connectionTimeout, TimeSpan readTimeout, TimeSpan writeTimeout)
+   at RabbitMQ.Client.ConnectionFactory.CreateFrameHandler(AmqpTcpEndpoint endpoint)
+   at RabbitMQ.Client.EndpointResolverExtensions.SelectOne[T](IEndpointResolver resolver, Func`2 selector)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.EndpointResolverExtensions.SelectOne[T](IEndpointResolver resolver, Func`2 selector)
+   at RabbitMQ.Client.Framing.Impl.AutorecoveringConnection.Init(IEndpointResolver endpoints)
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection(IEndpointResolver endpointResolver, String clientProvidedName)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection(IEndpointResolver endpointResolver, String clientProvidedName)
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection(String clientProvidedName)
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection()
+   at HotelService.Services.RabbitMQProducerService.SendReportRequestToQueue(String location) in C:\Users\Huseyin\otel-rehberi\hotel-service\HotelService\Services\RabbitMQProducerService.cs:line 23
+   at HotelService.Controllers.ReportController.RequestReport(String location) in C:\Users\Huseyin\otel-rehberi\hotel-service\HotelService\Controllers\ReportController.cs:line 20
+   at lambda_method2(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2024-10-20 01:21:25.113 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5000/api/Report application/json 7 - 500 - text/plain;+charset=utf-8 5599.2021ms
+2024-10-20 01:21:31.081 +03:00 [INF] User profile is available. Using 'C:\Users\Huseyin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-10-20 01:21:32.483 +03:00 [INF] Now listening on: https://localhost:5000
+2024-10-20 01:21:32.484 +03:00 [INF] Now listening on: http://localhost:5001
+2024-10-20 01:21:32.487 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-20 01:21:32.488 +03:00 [INF] Hosting environment: Development
+2024-10-20 01:21:32.489 +03:00 [INF] Content root path: C:\Users\Huseyin\otel-rehberi\hotel-service\HotelService\
+2024-10-20 01:21:33.149 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/swagger/index.html - -
+2024-10-20 01:21:33.414 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/swagger/index.html - - - 200 - text/html;charset=utf-8 266.6066ms
+2024-10-20 01:21:33.423 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/_framework/aspnetcore-browser-refresh.js - -
+2024-10-20 01:21:33.426 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 3.2234ms
+2024-10-20 01:21:34.207 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/_vs/browserLink - -
+2024-10-20 01:21:34.223 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 15.9074ms
+2024-10-20 01:21:34.319 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/swagger/index.html - -
+2024-10-20 01:21:34.321 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/swagger/index.html - - - 200 - text/html;charset=utf-8 1.7733ms
+2024-10-20 01:21:34.586 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/swagger/v1/swagger.json - -
+2024-10-20 01:21:34.657 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 70.8060ms
+2024-10-20 01:21:43.775 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5000/api/Report application/json 7
+2024-10-20 01:21:43.818 +03:00 [INF] Executing endpoint 'HotelService.Controllers.ReportController.RequestReport (HotelService)'
+2024-10-20 01:21:43.839 +03:00 [INF] Route matched with {action = "RequestReport", controller = "Report"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult RequestReport(System.String) on controller HotelService.Controllers.ReportController (HotelService).
+2024-10-20 01:21:44.105 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-10-20 01:21:44.118 +03:00 [INF] Executed action HotelService.Controllers.ReportController.RequestReport (HotelService) in 274.4929ms
+2024-10-20 01:21:44.120 +03:00 [INF] Executed endpoint 'HotelService.Controllers.ReportController.RequestReport (HotelService)'
+2024-10-20 01:21:44.120 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5000/api/Report application/json 7 - 200 - application/json;+charset=utf-8 345.9432ms

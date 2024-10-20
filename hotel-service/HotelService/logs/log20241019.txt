@@ -822,3 +822,51 @@ FROM `Hotels` AS `h`
 2024-10-19 17:54:58.384 +03:00 [INF] Executed action HotelService.Controllers.HotelController.GetHotels (HotelService) in 7.1237ms
 2024-10-19 17:54:58.385 +03:00 [INF] Executed endpoint 'HotelService.Controllers.HotelController.GetHotels (HotelService)'
 2024-10-19 17:54:58.387 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/api/Hotel - - - 200 - application/json;+charset=utf-8 12.9326ms
+2024-10-19 21:48:53.932 +03:00 [INF] User profile is available. Using 'C:\Users\Huseyin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-10-19 21:48:54.183 +03:00 [INF] Now listening on: https://localhost:5000
+2024-10-19 21:48:54.184 +03:00 [INF] Now listening on: http://localhost:5001
+2024-10-19 21:48:54.187 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-19 21:48:54.188 +03:00 [INF] Hosting environment: Development
+2024-10-19 21:48:54.189 +03:00 [INF] Content root path: C:\Users\Huseyin\otel-rehberi\hotel-service\HotelService\
+2024-10-19 21:48:54.583 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/swagger/index.html - -
+2024-10-19 21:48:54.800 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/swagger/index.html - - - 200 - text/html;charset=utf-8 220.1037ms
+2024-10-19 21:48:54.802 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/_framework/aspnetcore-browser-refresh.js - -
+2024-10-19 21:48:54.809 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 7.0190ms
+2024-10-19 21:48:55.535 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/_vs/browserLink - -
+2024-10-19 21:48:55.550 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 14.7736ms
+2024-10-19 21:48:55.732 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/swagger/index.html - -
+2024-10-19 21:48:55.733 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/swagger/index.html - - - 200 - text/html;charset=utf-8 1.7054ms
+2024-10-19 21:48:55.929 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/swagger/v1/swagger.json - -
+2024-10-19 21:48:56.004 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 74.4199ms
+2024-10-19 21:50:16.752 +03:00 [INF] User profile is available. Using 'C:\Users\Huseyin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-10-19 21:50:16.956 +03:00 [INF] Now listening on: https://localhost:5000
+2024-10-19 21:50:16.957 +03:00 [INF] Now listening on: http://localhost:5001
+2024-10-19 21:50:16.961 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-19 21:50:16.963 +03:00 [INF] Hosting environment: Development
+2024-10-19 21:50:16.965 +03:00 [INF] Content root path: C:\Users\Huseyin\otel-rehberi\hotel-service\HotelService\
+2024-10-19 21:50:17.381 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/swagger/index.html - -
+2024-10-19 21:50:17.601 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/swagger/index.html - - - 200 - text/html;charset=utf-8 221.7096ms
+2024-10-19 21:50:17.604 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/_framework/aspnetcore-browser-refresh.js - -
+2024-10-19 21:50:17.610 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 6.4761ms
+2024-10-19 21:50:18.322 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/_vs/browserLink - -
+2024-10-19 21:50:18.337 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 15.5459ms
+2024-10-19 21:50:18.698 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/swagger/v1/swagger.json - -
+2024-10-19 21:50:18.706 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/swagger/index.html - -
+2024-10-19 21:50:18.708 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/swagger/index.html - - - 200 - text/html;charset=utf-8 2.0389ms
+2024-10-19 21:50:18.768 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 69.5768ms
+2024-10-19 21:51:38.512 +03:00 [INF] User profile is available. Using 'C:\Users\Huseyin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-10-19 21:51:38.765 +03:00 [INF] Now listening on: https://localhost:5000
+2024-10-19 21:51:38.766 +03:00 [INF] Now listening on: http://localhost:5001
+2024-10-19 21:51:38.770 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-19 21:51:38.771 +03:00 [INF] Hosting environment: Development
+2024-10-19 21:51:38.773 +03:00 [INF] Content root path: C:\Users\Huseyin\otel-rehberi\hotel-service\HotelService\
+2024-10-19 21:51:39.361 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/swagger/index.html - -
+2024-10-19 21:51:39.582 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/swagger/index.html - - - 200 - text/html;charset=utf-8 223.4398ms
+2024-10-19 21:51:39.585 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/_framework/aspnetcore-browser-refresh.js - -
+2024-10-19 21:51:39.592 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 7.1514ms
+2024-10-19 21:51:40.283 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/_vs/browserLink - -
+2024-10-19 21:51:40.296 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 12.9217ms
+2024-10-19 21:51:40.417 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/swagger/index.html - -
+2024-10-19 21:51:40.418 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/swagger/index.html - - - 200 - text/html;charset=utf-8 1.7474ms
+2024-10-19 21:51:40.624 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/swagger/v1/swagger.json - -
+2024-10-19 21:51:40.693 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 68.9574ms
