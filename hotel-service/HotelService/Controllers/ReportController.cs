@@ -1,8 +1,5 @@
-﻿using HotelService.Models;
+﻿using Microsoft.AspNetCore.Mvc;
 using HotelService.Services;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Threading.Tasks;
 
 namespace HotelService.Controllers
 {
@@ -10,41 +7,18 @@ namespace HotelService.Controllers
     [Route("api/[controller]")]
     public class ReportController : ControllerBase
     {
-        private readonly ReportRepository _repository;
+        private readonly RabbitMQProducerService _rabbitMQProducerService;
 
-        public ReportController(ReportRepository repository)
+        public ReportController(RabbitMQProducerService rabbitMQProducerService)
         {
-            _repository = repository;
+            _rabbitMQProducerService = rabbitMQProducerService;
         }
 
-        
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetReportById(Guid id)
-        {
-            var report = await _repository.GetReportByIdAsync(id);
-            if (report == null)
-            {
-                return NotFound(); // Rapor bulunamazsa 404 
-            }
-            return Ok(report); 
-        }
-
-        // Tüm raporları listele
-        [HttpGet]
-        public async Task<IActionResult> GetAllReports()
-        {
-            var reports = await _repository.GetAllReportsAsync();
-            return Ok(reports);
-        }
-
-        // Yeni rapor oluştur
         [HttpPost]
-        public async Task<IActionResult> CreateReport([FromQuery] string location)
+        public IActionResult RequestReport([FromBody] string location)
         {
-            var report = await _repository.GenerateReportAsync(location);
-            return Ok(report);
+            _rabbitMQProducerService.SendReportRequestToQueue(location);
+            return Ok(new { Message = "Rapor talebi gönderildi", Location = location });
         }
     }
-
-
 }

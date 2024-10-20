@@ -31,4 +31,5 @@ namespace ReportService.Services
             channel.BasicPublish(exchange: "", routingKey: "report_queue", basicProperties: null, body: body);
         }
     }
+
 }

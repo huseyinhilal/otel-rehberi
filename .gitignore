@@ -1,0 +1,54 @@
+# Build files
+bin/
+obj/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Logs
+*.log
+*.tlog
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Rider project files
+.idea/
+
+# VS Code settings
+.vscode/
+
+# Visual Studio specific files
+.vs/
+
+# Package dependencies
+*.nupkg
+*.snupkg
+packages/
+
+# Nuget
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Database
+*.mdf
+*.ldf
+
+# Test results
+TestResults/
+
+# Environment files
+.env
+.env.*
+
+# Dotnet publish
+publish/
+
+# Docker
+docker-compose.override.yml
