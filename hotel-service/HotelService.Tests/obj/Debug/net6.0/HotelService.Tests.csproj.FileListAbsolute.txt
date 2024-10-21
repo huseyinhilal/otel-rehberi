@@ -151,3 +151,5 @@ C:\Users\Huseyin\otel-rehberi\hotel-service\HotelService.Tests\bin\Debug\net6.0\
 C:\Users\Huseyin\otel-rehberi\hotel-service\HotelService.Tests\bin\Debug\net6.0\System.Text.Encodings.Web.dll
 C:\Users\Huseyin\otel-rehberi\hotel-service\HotelService.Tests\bin\Debug\net6.0\System.Text.Json.dll
 C:\Users\Huseyin\otel-rehberi\hotel-service\HotelService.Tests\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\Huseyin\otel-rehberi\hotel-service\HotelService.Tests\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Proxies.dll
+C:\Users\Huseyin\otel-rehberi\hotel-service\HotelService.Tests\bin\Debug\net6.0\RabbitMQ.Client.dll

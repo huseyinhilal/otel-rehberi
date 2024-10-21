@@ -1,5 +1,6 @@
 ﻿using System.Net.Http;
 using System.Net.Http.Json;
+using System.Text.Json;
 using ReportService.Models;
 
 namespace ReportService.Services
@@ -18,6 +19,13 @@ namespace ReportService.Services
         {
             try
             {
+                var options = new JsonSerializerOptions
+                {
+                    ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve,
+                    WriteIndented = true
+                };
+
+
                 // HotelService'teki GetByLocation endpoint'ine istek yapıyoruz
                 var response = await _httpClient.GetAsync($"https://localhost:5000/api/hotel/bylocation?location={location}");
 
@@ -25,8 +33,10 @@ namespace ReportService.Services
                 response.EnsureSuccessStatusCode();
 
                 // Gelen cevabı List<Hotel> türüne deserialize et
-                var hotels = await response.Content.ReadFromJsonAsync<List<Hotel>>();
-                return hotels ?? new List<Hotel>();
+                var hotels = await response.Content.ReadAsStringAsync();
+                var hotelsData = JsonSerializer.Deserialize<List<Hotel>>(hotels, options);
+
+                return hotelsData ?? new List<Hotel>();
             }
             catch (HttpRequestException ex)
             {

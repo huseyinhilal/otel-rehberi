@@ -27,8 +27,8 @@ namespace ReportService.Models
         [MaxLength(100)]
         public string CompanyTitle { get; set; }
 
-        [Required]
-        [MaxLength(50)]
-        public string ContactInfo { get; set; } // Telefon veya email adresi olabilir.
+
+        public ICollection<CommunicationInfo> ?CommunicationInfos { get; set; }
+
     }
 }

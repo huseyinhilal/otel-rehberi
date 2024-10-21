@@ -80,7 +80,7 @@ namespace ReportService.Services
 
                 // Raporu güncelle
                 reportInDb.HotelCount = hotels.Count;
-                reportInDb.ContactInfoCount = hotels.Sum(h => h.ContactInfo.Length); // İletişim bilgileri sayısı
+                //reportInDb.ContactInfoCount = hotels.Sum(h => h.ContactInfo.Length); // İletişim bilgileri sayısı
                 reportInDb.Status = "Tamamlandı"; // Raporu tamamlanmış olarak işaretle
 
                 // Simüle edilmiş kısa bekleme
