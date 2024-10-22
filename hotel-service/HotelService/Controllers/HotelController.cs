@@ -22,36 +22,88 @@ namespace HotelService.Controllers
 
         // List all hotels
         [HttpGet]
-        public async Task<IActionResult> GetHotels()
+        public async Task<IActionResult> GetHotels(int page = 1, int pageSize = 10)
         {
-            var hotels = await _context.Hotels.ToListAsync();
-            return Ok(hotels);
+            var totalRecords = await _context.Hotels.CountAsync();
+            var hotels = await _context.Hotels
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+
+            var response = new
+            {
+                TotalRecords = totalRecords,
+                Page = page,
+                PageSize = pageSize,
+                TotalPages = (int)Math.Ceiling(totalRecords / (double)pageSize),
+                Hotels = hotels
+            };
+
+            return Ok(response);
         }
+
 
         // Create new hotel
         [Authorize]
         [HttpPost]
         public async Task<IActionResult> CreateHotel([FromBody] Hotel hotel)
         {
-            using var transaction = await _context.Database.BeginTransactionAsync(); // begin Transaction
-            try
+            // InMemory veritabanı kullanılıyorsa transaction'ı atla
+            var isRealDatabase = _context.Database.ProviderName != "Microsoft.EntityFrameworkCore.InMemory";
+
+            if (isRealDatabase)
             {
-                Log.Information("Attempt to create a new hotel: {@Hotel}", hotel);// Logging
+                using var transaction = await _context.Database.BeginTransactionAsync(); // begin Transaction
+                try
+                {
+                    Log.Information("Attempt to create a new hotel: {@Hotel}", hotel);// Logging
+
+                    // CommunicationInfo'yu otel ile ilişkilendirme
+                    if (hotel.CommunicationInfos != null && hotel.CommunicationInfos.Any())
+                    {
+                        foreach (var communicationInfo in hotel.CommunicationInfos)
+                        {
+                            // CommunicationInfo içindeki Hotel nesnesini atayın
+                            communicationInfo.Hotel = hotel;
+                        }
+                    }
+
+                    _context.Hotels.Add(hotel);
+                    await _context.SaveChangesAsync(); // Save Hotel
+
+                    // Transaction commit (Success case)
+                    await transaction.CommitAsync();
+                    return CreatedAtAction(nameof(GetHotels), new { id = hotel.Id }, hotel);
+                }
+                catch (Exception ex)
+                {
+                    // Rollback on Error
+                    await transaction.RollbackAsync();
+                    Log.Error("ERROR:CreateHotel An Error occured during Hotel Creation: {ErrorMessage}", ex.Message);// Logging
+                    return StatusCode(500, "ERROR:CreateHotel.");
+                }
+            }
+            else
+            {
+                // Transaction olmadan işlem yapılıyor
+                Log.Information("Attempt to create a new hotel in test environment (without transaction): {@Hotel}", hotel);// Logging
+
+                // CommunicationInfo'yu otel ile ilişkilendirme
+                if (hotel.CommunicationInfos != null && hotel.CommunicationInfos.Any())
+                {
+                    foreach (var communicationInfo in hotel.CommunicationInfos)
+                    {
+                        // CommunicationInfo içindeki Hotel nesnesini atayın
+                        communicationInfo.Hotel = hotel;
+                    }
+                }
+
                 _context.Hotels.Add(hotel);
                 await _context.SaveChangesAsync(); // Save Hotel
-
-                // Transaction commit (Success case)
-                await transaction.CommitAsync();
                 return CreatedAtAction(nameof(GetHotels), new { id = hotel.Id }, hotel);
             }
-            catch (Exception ex)
-            {
-                // Rollback on Error
-                await transaction.RollbackAsync();
-                Log.Error("ERROR:CreateHotel An Error occured during Hotel Creation: {ErrorMessage}", ex.Message);// Logging
-                return StatusCode(500, "ERROR:CreateHotel .");
-            }
         }
+
 
         // Update hotel 
         [HttpPut("{id}")]
@@ -68,7 +120,6 @@ namespace HotelService.Controllers
                 hotel.Location = updatedHotel.Location;
                 hotel.ContactPersonFirstName = updatedHotel.ContactPersonFirstName;
                 hotel.ContactPersonLastName = updatedHotel.ContactPersonLastName;
-                hotel.ContactInfo = updatedHotel.ContactInfo;
 
                 await _context.SaveChangesAsync();
                 // Transaction commit (Success case)
@@ -105,6 +156,28 @@ namespace HotelService.Controllers
             var hotel = await _context.Hotels.FindAsync(id);
             if (hotel == null) return NotFound();
             return Ok(hotel);
+        }
+
+        // Get hotel by location
+        [HttpGet("bylocation")]
+        public async Task<IActionResult> GetHotelsByLocation([FromQuery] string location)
+        {
+            if (string.IsNullOrEmpty(location))
+            {
+                return BadRequest("Location parametresi zorunludur.");
+            }
+
+            // Veritabanından ilgili konuma ait otelleri getirir
+            var hotels = await _context.Hotels
+                                       .Where(h => h.Location == location)
+                                       .ToListAsync();
+
+            if (hotels == null || !hotels.Any())
+            {
+                return NotFound($"'{location}' konumunda otel bulunamadı.");
+            }
+
+            return Ok(hotels);
         }
     }
 

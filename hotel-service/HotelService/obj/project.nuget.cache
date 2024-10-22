@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "D20OshvebCLvaDv4+azGBLB4CvQhPkmK0MGRq2yu8WKre+WXrgW2fiNW3Jm/AnaDFv/xEfPZV5kMTNpzjWla8Q==",
+  "dgSpecHash": "Fd/DTm4lVChP3e3PxQalpGjTanRnoB+g1jntB3qvUdTzi3HCB1PBt4Jk6LBY2+BJjdvaSjorf2BIYZAfKfW1Bw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Huseyin\\otel-rehberi\\hotel-service\\HotelService\\HotelService.csproj",
   "expectedPackageFiles": [
@@ -14,6 +14,7 @@
     "C:\\Users\\Huseyin\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.30\\microsoft.entityframeworkcore.analyzers.6.0.30.nupkg.sha512",
     "C:\\Users\\Huseyin\\.nuget\\packages\\microsoft.entityframeworkcore.design\\6.0.0\\microsoft.entityframeworkcore.design.6.0.0.nupkg.sha512",
     "C:\\Users\\Huseyin\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\6.0.0\\microsoft.entityframeworkcore.inmemory.6.0.0.nupkg.sha512",
+    "C:\\Users\\Huseyin\\.nuget\\packages\\microsoft.entityframeworkcore.proxies\\6.0.0\\microsoft.entityframeworkcore.proxies.6.0.0.nupkg.sha512",
     "C:\\Users\\Huseyin\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\6.0.7\\microsoft.entityframeworkcore.relational.6.0.7.nupkg.sha512",
     "C:\\Users\\Huseyin\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\Huseyin\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\6.0.0\\microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",

@@ -1,5 +1,4 @@
 ﻿using System.Text;
-using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
@@ -12,8 +11,9 @@ namespace ReportService.Services
     {
         private readonly IServiceScopeFactory _scopeFactory;
         private readonly ConnectionFactory _factory;
+        private readonly HotelServiceClient _hotelServiceClient;
 
-        public RabbitMQConsumerService(IConfiguration configuration, IServiceScopeFactory scopeFactory)
+        public RabbitMQConsumerService(IConfiguration configuration, IServiceScopeFactory scopeFactory, HotelServiceClient hotelServiceClient)
         {
             _factory = new ConnectionFactory
             {
@@ -22,76 +22,83 @@ namespace ReportService.Services
                 Password = configuration["RabbitMQ:Password"]
             };
             _scopeFactory = scopeFactory;
+            _hotelServiceClient = hotelServiceClient;
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            try
+            using var connection = _factory.CreateConnection();
+            using var channel = connection.CreateModel();
+            channel.QueueDeclare(queue: "report_queue", durable: false, exclusive: false, autoDelete: false, arguments: null);
+
+            var consumer = new EventingBasicConsumer(channel);
+            consumer.Received += async (model, ea) =>
             {
-                using var connection = _factory.CreateConnection();
-                using var channel = connection.CreateModel();
-                Console.WriteLine("RabbitMQ bağlantısı başarılı, kuyruk dinleniyor...");
+                var body = ea.Body.ToArray();
+                var message = Encoding.UTF8.GetString(body);
 
-                channel.QueueDeclare(queue: "report_queue", durable: false, exclusive: false, autoDelete: false, arguments: null);
-                Console.WriteLine("Kuyruk başarıyla tanımlandı: report_queue");
-
-                var consumer = new EventingBasicConsumer(channel);
-                consumer.Received += async (model, ea) =>
+                dynamic reportRequest = null;
+                try
                 {
-                    Console.WriteLine("Mesaj alınıyor...");
-                    var body = ea.Body.ToArray();
-                    var message = Encoding.UTF8.GetString(body);
-                    Console.WriteLine("Mesaj içeriği: " + message);
-
-                    var report = JsonConvert.DeserializeObject<Report>(message);
-                    Console.WriteLine($"Deserializasyon başarılı, rapor id: {report.Id}");
-
-                    try
-                    {
-                        using var scope = _scopeFactory.CreateScope();
-                        var dbContext = scope.ServiceProvider.GetRequiredService<ReportDbContext>();
-
-                        // Simüle olarak eklenen gecikme
-                        await Task.Delay(5000); // Raporun hazırlanma süresi
-                        Console.WriteLine("Rapor hazırlama süresi tamamlandı.");
-
-                        // Raporun durumu güncelleniyor
-                        var reportInDb = await dbContext.Reports.FindAsync(report.Id);
-                        if (reportInDb != null)
-                        {
-                            reportInDb.Status = "Tamamlandı";
-                            await dbContext.SaveChangesAsync();
-                            Console.WriteLine($"Rapor başarıyla güncellendi: {reportInDb.Id}");
-                        }
-                        else
-                        {
-                            Console.WriteLine($"Rapor veritabanında bulunamadı: {report.Id}");
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine($"Veritabanı işlemi sırasında hata oluştu: {ex.Message}");
-                    }
-
-                    // Mesaj işlendikten sonra onayla
-                    channel.BasicAck(deliveryTag: ea.DeliveryTag, multiple: false);
-                    Console.WriteLine("Mesaj başarıyla işlenip onaylandı.");
-                };
-
-                while (!stoppingToken.IsCancellationRequested)
+                    reportRequest = JsonConvert.DeserializeObject<dynamic>(message);
+                }
+                catch (Exception ex)
                 {
-                    channel.BasicConsume(queue: "report_queue", autoAck: false, consumer: consumer);
-                    Console.WriteLine("Kuyruk dinleniyor...");
-
-                    // Arka planda çalışmaya devam etmek için kısa bir bekleme
-                    await Task.Delay(1000, stoppingToken);
+                    Console.WriteLine($"Deserialization hatası: {ex.Message}");
+                    return;
                 }
 
-                await Task.CompletedTask;
-            }
-            catch (Exception ex)
+                Guid reportId = Guid.Empty;
+                // ReportId kontrolü ve parse işlemi
+                if (reportRequest?.ReportId == null || !Guid.TryParse((string)reportRequest.ReportId.ToString(), out reportId))
+                {
+                    Console.WriteLine("ReportId geçersiz veya null: " + reportRequest?.ReportId);
+                    return; // ReportId null veya geçersizse işlemi durdur.
+                }
+
+                var location = (string)reportRequest.Location;
+
+                using var scope = _scopeFactory.CreateScope();
+                var dbContext = scope.ServiceProvider.GetRequiredService<ReportDbContext>();
+
+                // Mevcut raporu veritabanında bul (yeni rapor oluşturmak yerine)
+                var reportInDb = await dbContext.Reports.FindAsync(reportId);
+                if (reportInDb == null)
+                {
+                    Console.WriteLine($"Rapor veritabanında bulunamadı: {reportId}");
+                    return;
+                }
+
+                // HotelService'ten otel bilgilerini al
+                var hotels = await _hotelServiceClient.GetHotelsByLocation(location);
+
+                if (hotels == null || !hotels.Any())
+                {
+                    Console.WriteLine($"'{location}' konumunda otel bulunamadı.");
+                    return;
+                }
+
+                // Raporu güncelle
+                reportInDb.HotelCount = hotels.Count;
+                //reportInDb.ContactInfoCount = hotels.Sum(h => h.ContactInfo.Length); // İletişim bilgileri sayısı
+                reportInDb.Status = "Tamamlandı"; // Raporu tamamlanmış olarak işaretle
+
+                // Simüle edilmiş kısa bekleme
+                await Task.Delay(5000, stoppingToken);
+
+                await dbContext.SaveChangesAsync();
+                Console.WriteLine($"Rapor güncellendi ve tamamlandı: {reportInDb.Id}");
+
+                // Mesajı onayla
+                channel.BasicAck(deliveryTag: ea.DeliveryTag, multiple: false);
+            };
+
+            while (!stoppingToken.IsCancellationRequested)
             {
-                Console.WriteLine($"RabbitMQ bağlantısı sırasında hata oluştu: {ex.Message}");
+                channel.BasicConsume(queue: "report_queue", autoAck: false, consumer: consumer);
+
+                // Kısa bekleme
+                await Task.Delay(1000, stoppingToken);
             }
         }
     }

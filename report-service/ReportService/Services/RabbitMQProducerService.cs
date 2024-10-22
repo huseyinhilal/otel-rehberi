@@ -19,13 +19,13 @@ namespace ReportService.Services
             };
         }
 
-        public void SendReportToQueue(Report report)
+        public void SendReportToQueue(Guid reportId, string location)
         {
             using var connection = _factory.CreateConnection();
             using var channel = connection.CreateModel();
             channel.QueueDeclare(queue: "report_queue", durable: false, exclusive: false, autoDelete: false, arguments: null);
 
-            var message = JsonConvert.SerializeObject(report);
+            var message = JsonConvert.SerializeObject(new { ReportId = reportId, Location = location });
             var body = Encoding.UTF8.GetBytes(message);
 
             channel.BasicPublish(exchange: "", routingKey: "report_queue", basicProperties: null, body: body);

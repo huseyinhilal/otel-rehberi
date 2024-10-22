@@ -152,3 +152,4 @@ C:\Users\Huseyin\otel-rehberi\hotel-service\HotelService\obj\Debug\net6.0\HotelS
 C:\Users\Huseyin\otel-rehberi\hotel-service\HotelService\obj\Debug\net6.0\HotelService.genruntimeconfig.cache
 C:\Users\Huseyin\otel-rehberi\hotel-service\HotelService\obj\Debug\net6.0\ref\HotelService.dll
 C:\Users\Huseyin\otel-rehberi\hotel-service\HotelService\bin\Debug\net6.0\RabbitMQ.Client.dll
+C:\Users\Huseyin\otel-rehberi\hotel-service\HotelService\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Proxies.dll

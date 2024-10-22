@@ -19,6 +19,30 @@ namespace HotelService.Migrations
                 .HasAnnotation("ProductVersion", "6.0.30")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
+            modelBuilder.Entity("HotelService.Models.CommunicationInfo", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<Guid>("HotelId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("InfoDetails")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("InfoType")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("HotelId");
+
+                    b.ToTable("CommunicationInfo");
+                });
+
             modelBuilder.Entity("HotelService.Models.Hotel", b =>
                 {
                     b.Property<Guid>("Id")
@@ -29,11 +53,6 @@ namespace HotelService.Migrations
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("varchar(100)");
-
-                    b.Property<string>("ContactInfo")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
 
                     b.Property<string>("ContactPersonFirstName")
                         .IsRequired()
@@ -60,34 +79,20 @@ namespace HotelService.Migrations
                     b.ToTable("Hotels");
                 });
 
-            modelBuilder.Entity("HotelService.Models.Report", b =>
+            modelBuilder.Entity("HotelService.Models.CommunicationInfo", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("char(36)");
+                    b.HasOne("HotelService.Models.Hotel", "Hotel")
+                        .WithMany("CommunicationInfos")
+                        .HasForeignKey("HotelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Property<int>("HotelCount")
-                        .HasColumnType("int");
+                    b.Navigation("Hotel");
+                });
 
-                    b.Property<string>("Location")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
-
-                    b.Property<int>("PhoneNumberCount")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("RequestedAt")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("varchar(20)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Reports");
+            modelBuilder.Entity("HotelService.Models.Hotel", b =>
+                {
+                    b.Navigation("CommunicationInfos");
                 });
 #pragma warning restore 612, 618
         }
