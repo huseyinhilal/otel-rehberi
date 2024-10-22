@@ -441,3 +441,16 @@ WHERE `c`.`HotelId` = @__get_Item_0
 2024-10-22 20:36:18.186 +03:00 [INF] Executed action HotelService.Controllers.HotelController.GetHotelsByLocation (HotelService) in 14.8508ms
 2024-10-22 20:36:18.188 +03:00 [INF] Executed endpoint 'HotelService.Controllers.HotelController.GetHotelsByLocation (HotelService)'
 2024-10-22 20:36:18.189 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:5000/api/hotel/bylocation?location=Istanbul - - - 200 - application/json;+charset=utf-8 19.7485ms
+2024-10-22 21:39:04.100 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/swagger/index.html - -
+2024-10-22 21:39:04.103 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/swagger/index.html - - - 200 - text/html;charset=utf-8 2.3404ms
+2024-10-22 21:39:05.009 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/swagger/index.html - -
+2024-10-22 21:39:05.010 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/swagger/index.html - - - 200 - text/html;charset=utf-8 1.2511ms
+2024-10-22 21:39:05.289 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/swagger/v1/swagger.json - -
+2024-10-22 21:39:05.293 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 4.4396ms
+2024-10-22 21:39:21.560 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5000/api/Login/login application/json 50
+2024-10-22 21:39:21.561 +03:00 [INF] Executing endpoint 'LoginController.Login (HotelService)'
+2024-10-22 21:39:21.561 +03:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(HotelService.Models.Login) on controller LoginController (HotelService).
+2024-10-22 21:39:21.563 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType4`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-10-22 21:39:21.564 +03:00 [INF] Executed action LoginController.Login (HotelService) in 1.5399ms
+2024-10-22 21:39:21.565 +03:00 [INF] Executed endpoint 'LoginController.Login (HotelService)'
+2024-10-22 21:39:21.567 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5000/api/Login/login application/json 50 - 200 - application/json;+charset=utf-8 6.9569ms
