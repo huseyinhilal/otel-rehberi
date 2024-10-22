@@ -131,10 +131,10 @@ ReportService: https://localhost:7127/swagger
 
 ### 8. JWT ile Authentication
 Otel CRUD islemleri icin JWT token kullanmaniz gerekiyor. Swagger uzerinden Login endpointi ile token olusturabilir ve bu token'i Authorize butonuna tiklayarak kullanabilirsiniz.
-![token olusturma](image.png)
-![tokeni kopyalama](image-1.png)
-![auth butonu](image-2.png)
-![tokeni girme (Bearer token)](image-3.png)
+![token olusturma](img/Screenshot_1.png)
+![tokeni kopyalama](img/Screenshot_2.png)
+![auth butonu](img/Screenshot_3.png)
+![tokeni girme (Bearer token)](img/Screenshot_4.png)
 
 ### 9. Unit Testleri calistirma
 Projede xUnit testleri bulunmaktadir. Testleri calistirmak icin su komutu kullanabilirsiniz:
