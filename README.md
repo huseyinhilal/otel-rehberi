@@ -10,20 +10,21 @@ Bu proje, birbirleriyle iletisim kuran iki mikroservis kullanarak otel rehberi u
 ## Kullanilan Teknolojiler
 
 - .NET Core
-- Entity Framework Core (MySQL)
+- Entity Framework Core 
+- MySQL
 - RabbitMQ
 - Docker
 - Swagger (API dokumantasyonu)
 - xUnit (Unit Testleri)
 - Git
 
-## ozellikler
+## Sunulan Fonksiyonlar
 
 - Otel bilgisi olusturma, guncelleme, silme
 - Otellere sinirsiz sayida iletisim bilgisi ekleme/kaldirma
 - Otellerin konumlarina gore istatistiksel rapor olusturma
 - Asenkron raporlama sureci (RabbitMQ ile)
-- JWT Authentication (Otel Kayıt islemleri icin)
+- JWT Authentication (Otel Kayit islemleri icin)
 - Lazy Loading ve Pagination ile performans optimizasyonlari
 
 ## Gereksinimler
@@ -33,7 +34,7 @@ Bu projeyi calistirmak icin asagidaki yazilimlarin sisteminizde kurulu olmasi ge
 - [.NET 6 SDK](https://dotnet.microsoft.com/download/dotnet/6.0)
 - [MySQL](https://dev.mysql.com/downloads/)
 - [RabbitMQ](https://www.rabbitmq.com/download.html)
-- [Docker](https://www.docker.com/get-started) (RabbitMQ ve MySQL icin kullanilabilir)
+- [Docker](https://www.docker.com/get-started) 
 
 ## Projeyi calistirmak
 
@@ -130,6 +131,10 @@ ReportService: https://localhost:7127/swagger
 
 ### 8. JWT ile Authentication
 Otel CRUD islemleri icin JWT token kullanmaniz gerekiyor. Swagger uzerinden Login endpointi ile token olusturabilir ve bu token'i Authorize butonuna tiklayarak kullanabilirsiniz.
+![token olusturma](image.png)
+![tokeni kopyalama](image-1.png)
+![auth butonu](image-2.png)
+![tokeni girme (Bearer token)](image-3.png)
 
 ### 9. Unit Testleri calistirma
 Projede xUnit testleri bulunmaktadir. Testleri calistirmak icin su komutu kullanabilirsiniz:
@@ -139,10 +144,10 @@ dotnet test
 ```
 
 ### 10. Lazy Loading
-Lazy Loading, otel verilerini cekerken iletisim bilgileri gibi iliskili verilerin sadece gerektiginde getirilmesini saglar. Bu, performansi iyilestirir ve gereksiz veri yuklemelerini onler. Bu proje Lazy Loading'i kullanarak, otellerin iletisim bilgilerini ihtiyac aninda yukler. Bu ozelligi HotelDbContext uzerinde yapilandirildi.
+Lazy Loading, otel verilerini cekerken iletisim bilgileri gibi iliskili verilerin sadece gerektiginde getirilmesini saglar. Bu, performansi iyilestirir ve gereksiz veri yuklemelerini onler. Bu proje Lazy Loading'i kullanarak, otellerin iletisim bilgilerini ihtiyac aninda yukler. Bu ozelligi HotelDbContext uzerine kurulmustur.
 
 ### 11. Pagination
-Proje buyuk veri kumelerinde performans sorunlarini onlemek icin Pagination kullanir. Pagination, buyuk veri kumelerini sayfalar halinde dondurerek sadece istenen veriyi kullaniciya iletir. Bu, otel listeleri ve raporlar gibi buyuk veri kumesi islemlerinde onemlidir.
+Proje buyuk veri kumelerinde performans sorunlarini onlemek icin Pagination kullanir. Pagination, buyuk veri kumelerini sayfalar halinde dondurerek sadece istenen veriyi kullaniciya iletir. Bu, otel listeleri ve raporlar gibi teoride sonsuz veri kumeleri islemlerinde onemlidir.
 
 ### 12. Iletisim Bilgisi Ekleme ve Kaldirma
 Otellere sinirsiz sayida iletisim bilgisi eklenebilir veya kaldirilabilir. Iletisim bilgileri, otellerle iliskilendirilen ayri bir tabloda tutulur. Bu islem asagidaki endpointler ile gerceklestirilir:
@@ -165,6 +170,6 @@ HotelService API
 
 ReportService API
 
-* POST /api/Report: Rapor olusturma (RabbitMQ uzerinden calisir)
+* POST /api/Report: Rapor olusturma (RabbitMQ kuyruguna mesaj birakir. Kuyruga birakilan mesajlari sirasiyla alir ve raporlari olusturup veri tabanina kaydeder.)
 * GET /api/Report: Tum raporlari listeleme
 * GET /api/Report/{id}: Belirli bir raporu goruntuleme
