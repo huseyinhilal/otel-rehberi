@@ -454,3 +454,10 @@ WHERE `c`.`HotelId` = @__get_Item_0
 2024-10-22 21:39:21.564 +03:00 [INF] Executed action LoginController.Login (HotelService) in 1.5399ms
 2024-10-22 21:39:21.565 +03:00 [INF] Executed endpoint 'LoginController.Login (HotelService)'
 2024-10-22 21:39:21.567 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5000/api/Login/login application/json 50 - 200 - application/json;+charset=utf-8 6.9569ms
+2024-10-22 22:29:03.706 +03:00 [INF] User profile is available. Using 'C:\Users\Huseyin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-10-22 22:29:03.814 +03:00 [INF] Now listening on: https://localhost:5000
+2024-10-22 22:29:03.814 +03:00 [INF] Now listening on: http://localhost:5001
+2024-10-22 22:29:03.817 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-22 22:29:03.817 +03:00 [INF] Hosting environment: Development
+2024-10-22 22:29:03.818 +03:00 [INF] Content root path: C:\Users\Huseyin\otel-rehberi\hotel-service\HotelService\
+2024-10-22 22:29:07.890 +03:00 [INF] Application is shutting down...

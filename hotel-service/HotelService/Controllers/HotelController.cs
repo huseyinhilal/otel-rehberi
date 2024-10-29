@@ -13,12 +13,15 @@ namespace HotelService.Controllers
     [Route("api/[controller]")]
     public class HotelController : ControllerBase
     {
+        private readonly HotelRepository _hotelRepository;
         private readonly HotelDbContext _context;
 
-        public HotelController(HotelDbContext context)
+        public HotelController(HotelDbContext context, HotelRepository hotelRepository)
         {
             _context = context;
+            _hotelRepository = hotelRepository;
         }
+
 
         // List all hotels
         [HttpGet]
@@ -48,104 +51,23 @@ namespace HotelService.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateHotel([FromBody] Hotel hotel)
         {
-            // InMemory veritabanı kullanılıyorsa transaction'ı atla
-            var isRealDatabase = _context.Database.ProviderName != "Microsoft.EntityFrameworkCore.InMemory";
-
-            if (isRealDatabase)
-            {
-                using var transaction = await _context.Database.BeginTransactionAsync(); // begin Transaction
-                try
-                {
-                    Log.Information("Attempt to create a new hotel: {@Hotel}", hotel);// Logging
-
-                    // CommunicationInfo'yu otel ile ilişkilendirme
-                    if (hotel.CommunicationInfos != null && hotel.CommunicationInfos.Any())
-                    {
-                        foreach (var communicationInfo in hotel.CommunicationInfos)
-                        {
-                            // CommunicationInfo içindeki Hotel nesnesini atayın
-                            communicationInfo.Hotel = hotel;
-                        }
-                    }
-
-                    _context.Hotels.Add(hotel);
-                    await _context.SaveChangesAsync(); // Save Hotel
-
-                    // Transaction commit (Success case)
-                    await transaction.CommitAsync();
-                    return CreatedAtAction(nameof(GetHotels), new { id = hotel.Id }, hotel);
-                }
-                catch (Exception ex)
-                {
-                    // Rollback on Error
-                    await transaction.RollbackAsync();
-                    Log.Error("ERROR:CreateHotel An Error occured during Hotel Creation: {ErrorMessage}", ex.Message);// Logging
-                    return StatusCode(500, "ERROR:CreateHotel.");
-                }
-            }
-            else
-            {
-                // Transaction olmadan işlem yapılıyor
-                Log.Information("Attempt to create a new hotel in test environment (without transaction): {@Hotel}", hotel);// Logging
-
-                // CommunicationInfo'yu otel ile ilişkilendirme
-                if (hotel.CommunicationInfos != null && hotel.CommunicationInfos.Any())
-                {
-                    foreach (var communicationInfo in hotel.CommunicationInfos)
-                    {
-                        // CommunicationInfo içindeki Hotel nesnesini atayın
-                        communicationInfo.Hotel = hotel;
-                    }
-                }
-
-                _context.Hotels.Add(hotel);
-                await _context.SaveChangesAsync(); // Save Hotel
-                return CreatedAtAction(nameof(GetHotels), new { id = hotel.Id }, hotel);
-            }
+            await _hotelRepository.AddHotelAsync(hotel);
+            return CreatedAtAction(nameof(GetHotels), new { id = hotel.Id }, hotel);
         }
 
-
-        // Update hotel 
+        //update hotel
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateHotel(Guid id, [FromBody] Hotel updatedHotel)
         {
-            using var transaction = await _context.Database.BeginTransactionAsync(); // begin Transaction
-            try
-            {
-                Log.Information("Attempt to Updating the Hotel : {@id}", id); // Logging
-                var hotel = await _context.Hotels.FindAsync(id);
-                if (hotel == null) return NotFound();
-
-                hotel.Name = updatedHotel.Name;
-                hotel.Location = updatedHotel.Location;
-                hotel.ContactPersonFirstName = updatedHotel.ContactPersonFirstName;
-                hotel.ContactPersonLastName = updatedHotel.ContactPersonLastName;
-
-                await _context.SaveChangesAsync();
-                // Transaction commit (Success case)
-                await transaction.CommitAsync();
-                return NoContent();
-            }
-            catch(Exception ex)
-            {
-
-                // Rollback on Error
-                await transaction.RollbackAsync();
-                Log.Error("ERROR:UpdateHotel An Error occured during Hotel Update: {ErrorMessage}", ex.Message);// Logging
-                return StatusCode(500, "ERROR:UpdateHotel .");
-            }
+            await _hotelRepository.UpdateHotelAsync(id, updatedHotel);
+            return NoContent();
         }
 
-        // Delete hotel
+        //delete hotel
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteHotel(Guid id)
         {
-            Log.Information("Deleting the Hotel : {@id}", id); // Logging
-            var hotel = await _context.Hotels.FindAsync(id);
-            if (hotel == null) return NotFound();
-
-            _context.Hotels.Remove(hotel);
-            await _context.SaveChangesAsync();
+            await _hotelRepository.DeleteHotelAsync(id);
             return NoContent();
         }
 

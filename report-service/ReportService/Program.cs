@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using ReportService.Data;
+using ReportService.Interfaces;
 using ReportService.Services;
 
 
@@ -20,11 +21,12 @@ builder.Services.AddDbContext<ReportDbContext>(options =>
 
 
 // Add RabbitMQ services
-builder.Services.AddSingleton<RabbitMQProducerService>();
+builder.Services.AddSingleton<IRabbitMQProducerService, RabbitMQProducerService>();
 builder.Services.AddHostedService<RabbitMQConsumerService>();
 
 builder.Services.AddHttpClient<HotelServiceClient>();
 
+builder.Services.AddScoped<IReportServiceT, ReportServiceT>();
 
 var app = builder.Build();
 
@@ -40,5 +42,8 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+// Exception Middleware
+app.UseMiddleware<ExceptionMiddleware>();
 
 app.Run();
