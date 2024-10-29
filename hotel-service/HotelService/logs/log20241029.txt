@@ -1,0 +1,405 @@
+2024-10-29 23:42:03.631 +03:00 [INF] User profile is available. Using 'C:\Users\Huseyin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-10-29 23:42:03.755 +03:00 [INF] Now listening on: https://localhost:5000
+2024-10-29 23:42:03.756 +03:00 [INF] Now listening on: http://localhost:5001
+2024-10-29 23:42:03.759 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-29 23:42:03.759 +03:00 [INF] Hosting environment: Development
+2024-10-29 23:42:03.760 +03:00 [INF] Content root path: C:\Users\Huseyin\otel-rehberi\hotel-service\HotelService\
+2024-10-29 23:42:08.197 +03:00 [INF] Application is shutting down...
+2024-10-29 23:42:13.544 +03:00 [INF] User profile is available. Using 'C:\Users\Huseyin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-10-29 23:42:13.632 +03:00 [INF] Now listening on: https://localhost:5000
+2024-10-29 23:42:13.633 +03:00 [INF] Now listening on: http://localhost:5001
+2024-10-29 23:42:13.636 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-29 23:42:13.636 +03:00 [INF] Hosting environment: Development
+2024-10-29 23:42:13.637 +03:00 [INF] Content root path: C:\Users\Huseyin\otel-rehberi\hotel-service\HotelService\
+2024-10-29 23:42:19.994 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/swagger/index.html - -
+2024-10-29 23:42:20.108 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/swagger/index.html - - - 200 - text/html;charset=utf-8 115.9289ms
+2024-10-29 23:42:20.137 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/swagger/swagger-ui.css - -
+2024-10-29 23:42:20.137 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/swagger/swagger-ui-bundle.js - -
+2024-10-29 23:42:20.137 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/swagger/swagger-ui-standalone-preset.js - -
+2024-10-29 23:42:20.153 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2024-10-29 23:42:20.154 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/swagger/swagger-ui.css - - - 200 143632 text/css 16.5132ms
+2024-10-29 23:42:20.155 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2024-10-29 23:42:20.157 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 19.7536ms
+2024-10-29 23:42:20.167 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2024-10-29 23:42:20.168 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 30.3810ms
+2024-10-29 23:42:20.981 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/swagger/favicon-32x32.png - -
+2024-10-29 23:42:20.982 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2024-10-29 23:42:20.983 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/swagger/index.html - -
+2024-10-29 23:42:20.983 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/swagger/favicon-32x32.png - - - 200 628 image/png 2.6231ms
+2024-10-29 23:42:20.984 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/swagger/index.html - - - 200 - text/html;charset=utf-8 1.6020ms
+2024-10-29 23:42:21.705 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/swagger/v1/swagger.json - -
+2024-10-29 23:42:21.766 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 61.3222ms
+2024-10-29 23:42:29.674 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/api/Hotel?page=1&pageSize=10 - -
+2024-10-29 23:42:29.702 +03:00 [INF] Executing endpoint 'HotelService.Controllers.HotelController.GetHotels (HotelService)'
+2024-10-29 23:42:29.727 +03:00 [INF] Route matched with {action = "GetHotels", controller = "Hotel"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetHotels(Int32, Int32) on controller HotelService.Controllers.HotelController (HotelService).
+2024-10-29 23:42:30.040 +03:00 [INF] Executed action HotelService.Controllers.HotelController.GetHotels (HotelService) in 308.3745ms
+2024-10-29 23:42:30.042 +03:00 [INF] Executed endpoint 'HotelService.Controllers.HotelController.GetHotels (HotelService)'
+2024-10-29 23:42:30.045 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NotImplementedException: The method or operation is not implemented.
+   at HotelService.Services.HotelRepository.GetAllHotelsAsync(Int32 page, Int32 pageSize) in C:\Users\Huseyin\otel-rehberi\hotel-service\HotelService\Services\HotelRepository.cs:line 76
+   at HotelService.Controllers.HotelController.GetHotels(Int32 page, Int32 pageSize) in C:\Users\Huseyin\otel-rehberi\hotel-service\HotelService\Controllers\HotelController.cs:line 26
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2024-10-29 23:42:30.070 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/api/Hotel?page=1&pageSize=10 - - - 500 - text/plain;+charset=utf-8 396.0137ms
+2024-10-29 23:42:36.134 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/api/Hotel?page=1&pageSize=10 - -
+2024-10-29 23:42:36.136 +03:00 [INF] Executing endpoint 'HotelService.Controllers.HotelController.GetHotels (HotelService)'
+2024-10-29 23:42:36.136 +03:00 [INF] Route matched with {action = "GetHotels", controller = "Hotel"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetHotels(Int32, Int32) on controller HotelService.Controllers.HotelController (HotelService).
+2024-10-29 23:42:36.142 +03:00 [INF] Executed action HotelService.Controllers.HotelController.GetHotels (HotelService) in 4.2476ms
+2024-10-29 23:42:36.142 +03:00 [INF] Executed endpoint 'HotelService.Controllers.HotelController.GetHotels (HotelService)'
+2024-10-29 23:42:36.143 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NotImplementedException: The method or operation is not implemented.
+   at HotelService.Services.HotelRepository.GetAllHotelsAsync(Int32 page, Int32 pageSize) in C:\Users\Huseyin\otel-rehberi\hotel-service\HotelService\Services\HotelRepository.cs:line 76
+   at HotelService.Controllers.HotelController.GetHotels(Int32 page, Int32 pageSize) in C:\Users\Huseyin\otel-rehberi\hotel-service\HotelService\Controllers\HotelController.cs:line 26
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2024-10-29 23:42:36.148 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/api/Hotel?page=1&pageSize=10 - - - 500 - text/plain;+charset=utf-8 14.5546ms
+2024-10-29 23:43:12.888 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/api/Hotel/bylocation?location=Istanbul - -
+2024-10-29 23:43:12.893 +03:00 [INF] Executing endpoint 'HotelService.Controllers.HotelController.GetHotelsByLocation (HotelService)'
+2024-10-29 23:43:12.904 +03:00 [INF] Route matched with {action = "GetHotelsByLocation", controller = "Hotel"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetHotelsByLocation(System.String) on controller HotelService.Controllers.HotelController (HotelService).
+2024-10-29 23:43:13.498 +03:00 [INF] Entity Framework Core 6.0.30 initialized 'HotelDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.2' with options: using lazy loading proxies ServerVersion 8.0.27-mysql 
+2024-10-29 23:43:13.848 +03:00 [INF] Executed DbCommand (53ms) [Parameters=[@__location_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT `h`.`Id`, `h`.`CompanyTitle`, `h`.`ContactPersonFirstName`, `h`.`ContactPersonLastName`, `h`.`Location`, `h`.`Name`
+FROM `Hotels` AS `h`
+WHERE `h`.`Location` = @__location_0
+2024-10-29 23:43:13.898 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[HotelService.Models.Hotel, HotelService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-10-29 23:43:13.966 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`HotelId`, `c`.`InfoDetails`, `c`.`InfoType`
+FROM `CommunicationInfo` AS `c`
+WHERE `c`.`HotelId` = @__get_Item_0
+2024-10-29 23:43:13.980 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`HotelId`, `c`.`InfoDetails`, `c`.`InfoType`
+FROM `CommunicationInfo` AS `c`
+WHERE `c`.`HotelId` = @__get_Item_0
+2024-10-29 23:43:13.982 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`HotelId`, `c`.`InfoDetails`, `c`.`InfoType`
+FROM `CommunicationInfo` AS `c`
+WHERE `c`.`HotelId` = @__get_Item_0
+2024-10-29 23:43:13.984 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`HotelId`, `c`.`InfoDetails`, `c`.`InfoType`
+FROM `CommunicationInfo` AS `c`
+WHERE `c`.`HotelId` = @__get_Item_0
+2024-10-29 23:43:13.986 +03:00 [INF] Executed action HotelService.Controllers.HotelController.GetHotelsByLocation (HotelService) in 1079.8663ms
+2024-10-29 23:43:13.987 +03:00 [INF] Executed endpoint 'HotelService.Controllers.HotelController.GetHotelsByLocation (HotelService)'
+2024-10-29 23:43:13.990 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/api/Hotel/bylocation?location=Istanbul - - - 200 - application/json;+charset=utf-8 1101.3776ms
+2024-10-29 23:46:09.509 +03:00 [INF] Application is shutting down...
+2024-10-29 23:46:12.479 +03:00 [INF] User profile is available. Using 'C:\Users\Huseyin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-10-29 23:46:12.567 +03:00 [INF] Now listening on: https://localhost:5000
+2024-10-29 23:46:12.567 +03:00 [INF] Now listening on: http://localhost:5001
+2024-10-29 23:46:12.570 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-29 23:46:12.570 +03:00 [INF] Hosting environment: Development
+2024-10-29 23:46:12.571 +03:00 [INF] Content root path: C:\Users\Huseyin\otel-rehberi\hotel-service\HotelService\
+2024-10-29 23:46:16.578 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/api/Hotel?page=1&pageSize=10 - -
+2024-10-29 23:46:16.624 +03:00 [INF] Executing endpoint 'HotelService.Controllers.HotelController.GetHotels (HotelService)'
+2024-10-29 23:46:16.645 +03:00 [INF] Route matched with {action = "GetHotels", controller = "Hotel"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetHotels(Int32, Int32) on controller HotelService.Controllers.HotelController (HotelService).
+2024-10-29 23:46:17.177 +03:00 [INF] Entity Framework Core 6.0.30 initialized 'HotelDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.2' with options: using lazy loading proxies ServerVersion 8.0.27-mysql 
+2024-10-29 23:46:17.258 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-29 23:46:17.260 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-29 23:46:17.448 +03:00 [INF] Executed DbCommand (36ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `h`.`Id`, `h`.`CompanyTitle`, `h`.`ContactPersonFirstName`, `h`.`ContactPersonLastName`, `h`.`Location`, `h`.`Name`
+FROM `Hotels` AS `h`
+LIMIT @__p_1 OFFSET @__p_0
+2024-10-29 23:46:17.499 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[HotelService.Models.Hotel, HotelService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-10-29 23:46:17.603 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`HotelId`, `c`.`InfoDetails`, `c`.`InfoType`
+FROM `CommunicationInfo` AS `c`
+WHERE `c`.`HotelId` = @__get_Item_0
+2024-10-29 23:46:17.618 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`HotelId`, `c`.`InfoDetails`, `c`.`InfoType`
+FROM `CommunicationInfo` AS `c`
+WHERE `c`.`HotelId` = @__get_Item_0
+2024-10-29 23:46:17.620 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`HotelId`, `c`.`InfoDetails`, `c`.`InfoType`
+FROM `CommunicationInfo` AS `c`
+WHERE `c`.`HotelId` = @__get_Item_0
+2024-10-29 23:46:17.623 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`HotelId`, `c`.`InfoDetails`, `c`.`InfoType`
+FROM `CommunicationInfo` AS `c`
+WHERE `c`.`HotelId` = @__get_Item_0
+2024-10-29 23:46:17.624 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`HotelId`, `c`.`InfoDetails`, `c`.`InfoType`
+FROM `CommunicationInfo` AS `c`
+WHERE `c`.`HotelId` = @__get_Item_0
+2024-10-29 23:46:17.626 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`HotelId`, `c`.`InfoDetails`, `c`.`InfoType`
+FROM `CommunicationInfo` AS `c`
+WHERE `c`.`HotelId` = @__get_Item_0
+2024-10-29 23:46:17.628 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`HotelId`, `c`.`InfoDetails`, `c`.`InfoType`
+FROM `CommunicationInfo` AS `c`
+WHERE `c`.`HotelId` = @__get_Item_0
+2024-10-29 23:46:17.630 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`HotelId`, `c`.`InfoDetails`, `c`.`InfoType`
+FROM `CommunicationInfo` AS `c`
+WHERE `c`.`HotelId` = @__get_Item_0
+2024-10-29 23:46:17.632 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`HotelId`, `c`.`InfoDetails`, `c`.`InfoType`
+FROM `CommunicationInfo` AS `c`
+WHERE `c`.`HotelId` = @__get_Item_0
+2024-10-29 23:46:17.634 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`HotelId`, `c`.`InfoDetails`, `c`.`InfoType`
+FROM `CommunicationInfo` AS `c`
+WHERE `c`.`HotelId` = @__get_Item_0
+2024-10-29 23:46:17.639 +03:00 [INF] Executed action HotelService.Controllers.HotelController.GetHotels (HotelService) in 990.4993ms
+2024-10-29 23:46:17.640 +03:00 [INF] Executed endpoint 'HotelService.Controllers.HotelController.GetHotels (HotelService)'
+2024-10-29 23:46:17.646 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/api/Hotel?page=1&pageSize=10 - - - 200 - application/json;+charset=utf-8 1070.2231ms
+2024-10-29 23:46:34.823 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5000/api/Hotel application/json 250
+2024-10-29 23:46:34.832 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-10-29 23:46:34.837 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-10-29 23:46:34.838 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5000/api/Hotel application/json 250 - 401 0 - 15.3203ms
+2024-10-29 23:46:52.907 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5000/api/Login/login application/json 50
+2024-10-29 23:46:52.908 +03:00 [INF] Executing endpoint 'LoginController.Login (HotelService)'
+2024-10-29 23:46:52.910 +03:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(HotelService.Models.Login) on controller LoginController (HotelService).
+2024-10-29 23:46:52.995 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-10-29 23:46:52.999 +03:00 [INF] Executed action LoginController.Login (HotelService) in 86.9545ms
+2024-10-29 23:46:53.000 +03:00 [INF] Executed endpoint 'LoginController.Login (HotelService)'
+2024-10-29 23:46:53.000 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5000/api/Login/login application/json 50 - 200 - application/json;+charset=utf-8 93.8518ms
+2024-10-29 23:47:19.775 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5000/api/Hotel application/json 250
+2024-10-29 23:47:19.811 +03:00 [INF] Executing endpoint 'HotelService.Controllers.HotelController.CreateHotel (HotelService)'
+2024-10-29 23:47:19.814 +03:00 [INF] Route matched with {action = "CreateHotel", controller = "Hotel"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateHotel(HotelService.Models.Hotel) on controller HotelService.Controllers.HotelController (HotelService).
+2024-10-29 23:47:19.824 +03:00 [INF] Entity Framework Core 6.0.30 initialized 'HotelDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.2' with options: using lazy loading proxies ServerVersion 8.0.27-mysql 
+2024-10-29 23:47:19.897 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 100), @p2='?' (Size = 100), @p3='?' (Size = 100), @p4='?' (Size = 100), @p5='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Hotels` (`Id`, `CompanyTitle`, `ContactPersonFirstName`, `ContactPersonLastName`, `Location`, `Name`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2024-10-29 23:47:19.902 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p6='?' (DbType = Guid), @p7='?' (DbType = Guid), @p8='?' (Size = 4000), @p9='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `CommunicationInfo` (`Id`, `HotelId`, `InfoDetails`, `InfoType`)
+VALUES (@p6, @p7, @p8, @p9);
+2024-10-29 23:47:19.913 +03:00 [INF] Executing CreatedAtActionResult, writing value of type 'HotelService.Models.Hotel'.
+2024-10-29 23:47:19.927 +03:00 [INF] Executed action HotelService.Controllers.HotelController.CreateHotel (HotelService) in 112.2436ms
+2024-10-29 23:47:19.928 +03:00 [INF] Executed endpoint 'HotelService.Controllers.HotelController.CreateHotel (HotelService)'
+2024-10-29 23:47:19.929 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5000/api/Hotel application/json 250 - 201 - application/json;+charset=utf-8 153.8682ms
+2024-10-29 23:48:08.771 +03:00 [INF] Request starting HTTP/2 PUT https://localhost:5000/api/Hotel/046bc33b-5005-4ecc-8a64-02d185d3c2af application/json 419
+2024-10-29 23:48:08.772 +03:00 [INF] Executing endpoint 'HotelService.Controllers.HotelController.UpdateHotel (HotelService)'
+2024-10-29 23:48:08.775 +03:00 [INF] Route matched with {action = "UpdateHotel", controller = "Hotel"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateHotel(System.Guid, HotelService.Models.Hotel) on controller HotelService.Controllers.HotelController (HotelService).
+2024-10-29 23:48:08.784 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2024-10-29 23:48:08.788 +03:00 [INF] Executed action HotelService.Controllers.HotelController.UpdateHotel (HotelService) in 11.9617ms
+2024-10-29 23:48:08.789 +03:00 [INF] Executed endpoint 'HotelService.Controllers.HotelController.UpdateHotel (HotelService)'
+2024-10-29 23:48:08.790 +03:00 [INF] Request finished HTTP/2 PUT https://localhost:5000/api/Hotel/046bc33b-5005-4ecc-8a64-02d185d3c2af application/json 419 - 400 - application/problem+json;+charset=utf-8 19.5274ms
+2024-10-29 23:49:02.295 +03:00 [INF] Request starting HTTP/2 PUT https://localhost:5000/api/Hotel/046bc33b-5005-4ecc-8a64-02d185d3c2af application/json 248
+2024-10-29 23:49:02.296 +03:00 [INF] Executing endpoint 'HotelService.Controllers.HotelController.UpdateHotel (HotelService)'
+2024-10-29 23:49:02.297 +03:00 [INF] Route matched with {action = "UpdateHotel", controller = "Hotel"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateHotel(System.Guid, HotelService.Models.Hotel) on controller HotelService.Controllers.HotelController (HotelService).
+2024-10-29 23:49:02.331 +03:00 [INF] Entity Framework Core 6.0.30 initialized 'HotelDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.2' with options: using lazy loading proxies ServerVersion 8.0.27-mysql 
+2024-10-29 23:49:02.345 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `h`.`Id`, `h`.`CompanyTitle`, `h`.`ContactPersonFirstName`, `h`.`ContactPersonLastName`, `h`.`Location`, `h`.`Name`
+FROM `Hotels` AS `h`
+WHERE `h`.`Id` = @__get_Item_0
+LIMIT 1
+2024-10-29 23:49:02.352 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (Size = 100), @p1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+UPDATE `Hotels` SET `Location` = @p0, `Name` = @p1
+WHERE `Id` = @p2;
+SELECT ROW_COUNT();
+2024-10-29 23:49:02.359 +03:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2024-10-29 23:49:02.359 +03:00 [INF] Executed action HotelService.Controllers.HotelController.UpdateHotel (HotelService) in 60.7295ms
+2024-10-29 23:49:02.360 +03:00 [INF] Executed endpoint 'HotelService.Controllers.HotelController.UpdateHotel (HotelService)'
+2024-10-29 23:49:02.361 +03:00 [INF] Request finished HTTP/2 PUT https://localhost:5000/api/Hotel/046bc33b-5005-4ecc-8a64-02d185d3c2af application/json 248 - 204 - - 65.6567ms
+2024-10-29 23:49:14.079 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/api/Hotel/046bc33b-5005-4ecc-8a64-02d185d3c2af - -
+2024-10-29 23:49:14.080 +03:00 [INF] Executing endpoint 'HotelService.Controllers.HotelController.GetHotelById (HotelService)'
+2024-10-29 23:49:14.084 +03:00 [INF] Route matched with {action = "GetHotelById", controller = "Hotel"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetHotelById(System.Guid) on controller HotelService.Controllers.HotelController (HotelService).
+2024-10-29 23:49:14.088 +03:00 [INF] Entity Framework Core 6.0.30 initialized 'HotelDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.2' with options: using lazy loading proxies ServerVersion 8.0.27-mysql 
+2024-10-29 23:49:14.091 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `h`.`Id`, `h`.`CompanyTitle`, `h`.`ContactPersonFirstName`, `h`.`ContactPersonLastName`, `h`.`Location`, `h`.`Name`
+FROM `Hotels` AS `h`
+WHERE `h`.`Id` = @__get_Item_0
+LIMIT 1
+2024-10-29 23:49:14.093 +03:00 [INF] Executing OkObjectResult, writing value of type 'Castle.Proxies.HotelProxy'.
+2024-10-29 23:49:14.101 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`HotelId`, `c`.`InfoDetails`, `c`.`InfoType`
+FROM `CommunicationInfo` AS `c`
+WHERE `c`.`HotelId` = @__get_Item_0
+2024-10-29 23:49:14.103 +03:00 [INF] Executed action HotelService.Controllers.HotelController.GetHotelById (HotelService) in 17.5924ms
+2024-10-29 23:49:14.104 +03:00 [INF] Executed endpoint 'HotelService.Controllers.HotelController.GetHotelById (HotelService)'
+2024-10-29 23:49:14.105 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/api/Hotel/046bc33b-5005-4ecc-8a64-02d185d3c2af - - - 200 - application/json;+charset=utf-8 25.7344ms
+2024-10-29 23:49:29.353 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/api/Hotel/bylocation?location=Mersin - -
+2024-10-29 23:49:29.354 +03:00 [INF] Executing endpoint 'HotelService.Controllers.HotelController.GetHotelsByLocation (HotelService)'
+2024-10-29 23:49:29.356 +03:00 [INF] Route matched with {action = "GetHotelsByLocation", controller = "Hotel"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetHotelsByLocation(System.String) on controller HotelService.Controllers.HotelController (HotelService).
+2024-10-29 23:49:29.359 +03:00 [INF] Entity Framework Core 6.0.30 initialized 'HotelDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.2' with options: using lazy loading proxies ServerVersion 8.0.27-mysql 
+2024-10-29 23:49:29.365 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__location_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT `h`.`Id`, `h`.`CompanyTitle`, `h`.`ContactPersonFirstName`, `h`.`ContactPersonLastName`, `h`.`Location`, `h`.`Name`
+FROM `Hotels` AS `h`
+WHERE `h`.`Location` = @__location_0
+2024-10-29 23:49:29.367 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[HotelService.Models.Hotel, HotelService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-10-29 23:49:29.368 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`HotelId`, `c`.`InfoDetails`, `c`.`InfoType`
+FROM `CommunicationInfo` AS `c`
+WHERE `c`.`HotelId` = @__get_Item_0
+2024-10-29 23:49:29.370 +03:00 [INF] Executed action HotelService.Controllers.HotelController.GetHotelsByLocation (HotelService) in 12.4695ms
+2024-10-29 23:49:29.371 +03:00 [INF] Executed endpoint 'HotelService.Controllers.HotelController.GetHotelsByLocation (HotelService)'
+2024-10-29 23:49:29.371 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/api/Hotel/bylocation?location=Mersin - - - 200 - application/json;+charset=utf-8 18.7427ms
+2024-10-29 23:49:58.303 +03:00 [INF] Request starting HTTP/2 DELETE https://localhost:5000/api/Hotel/046bc33b-5005-4ecc-8a64-02d185d3c2af - -
+2024-10-29 23:49:58.304 +03:00 [INF] Executing endpoint 'HotelService.Controllers.HotelController.DeleteHotel (HotelService)'
+2024-10-29 23:49:58.310 +03:00 [INF] Route matched with {action = "DeleteHotel", controller = "Hotel"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteHotel(System.Guid) on controller HotelService.Controllers.HotelController (HotelService).
+2024-10-29 23:49:58.315 +03:00 [INF] Entity Framework Core 6.0.30 initialized 'HotelDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.2' with options: using lazy loading proxies ServerVersion 8.0.27-mysql 
+2024-10-29 23:49:58.325 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `h`.`Id`, `h`.`CompanyTitle`, `h`.`ContactPersonFirstName`, `h`.`ContactPersonLastName`, `h`.`Location`, `h`.`Name`
+FROM `Hotels` AS `h`
+WHERE `h`.`Id` = @__get_Item_0
+LIMIT 1
+2024-10-29 23:49:58.337 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM `Hotels`
+WHERE `Id` = @p0;
+SELECT ROW_COUNT();
+2024-10-29 23:49:58.344 +03:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2024-10-29 23:49:58.345 +03:00 [INF] Executed action HotelService.Controllers.HotelController.DeleteHotel (HotelService) in 32.8757ms
+2024-10-29 23:49:58.346 +03:00 [INF] Executed endpoint 'HotelService.Controllers.HotelController.DeleteHotel (HotelService)'
+2024-10-29 23:49:58.347 +03:00 [INF] Request finished HTTP/2 DELETE https://localhost:5000/api/Hotel/046bc33b-5005-4ecc-8a64-02d185d3c2af - - - 204 - - 43.4052ms
+2024-10-29 23:50:01.306 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/api/Hotel/046bc33b-5005-4ecc-8a64-02d185d3c2af - -
+2024-10-29 23:50:01.307 +03:00 [INF] Executing endpoint 'HotelService.Controllers.HotelController.GetHotelById (HotelService)'
+2024-10-29 23:50:01.308 +03:00 [INF] Route matched with {action = "GetHotelById", controller = "Hotel"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetHotelById(System.Guid) on controller HotelService.Controllers.HotelController (HotelService).
+2024-10-29 23:50:01.314 +03:00 [INF] Entity Framework Core 6.0.30 initialized 'HotelDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.2' with options: using lazy loading proxies ServerVersion 8.0.27-mysql 
+2024-10-29 23:50:01.317 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `h`.`Id`, `h`.`CompanyTitle`, `h`.`ContactPersonFirstName`, `h`.`ContactPersonLastName`, `h`.`Location`, `h`.`Name`
+FROM `Hotels` AS `h`
+WHERE `h`.`Id` = @__get_Item_0
+LIMIT 1
+2024-10-29 23:50:01.324 +03:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2024-10-29 23:50:01.326 +03:00 [INF] Executed action HotelService.Controllers.HotelController.GetHotelById (HotelService) in 14.4674ms
+2024-10-29 23:50:01.328 +03:00 [INF] Executed endpoint 'HotelService.Controllers.HotelController.GetHotelById (HotelService)'
+2024-10-29 23:50:01.329 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/api/Hotel/046bc33b-5005-4ecc-8a64-02d185d3c2af - - - 404 - application/problem+json;+charset=utf-8 22.6947ms
+2024-10-29 23:50:10.343 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/api/Hotel?page=1&pageSize=10 - -
+2024-10-29 23:50:10.344 +03:00 [INF] Executing endpoint 'HotelService.Controllers.HotelController.GetHotels (HotelService)'
+2024-10-29 23:50:10.345 +03:00 [INF] Route matched with {action = "GetHotels", controller = "Hotel"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetHotels(Int32, Int32) on controller HotelService.Controllers.HotelController (HotelService).
+2024-10-29 23:50:10.347 +03:00 [INF] Entity Framework Core 6.0.30 initialized 'HotelDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.2' with options: using lazy loading proxies ServerVersion 8.0.27-mysql 
+2024-10-29 23:50:10.349 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `h`.`Id`, `h`.`CompanyTitle`, `h`.`ContactPersonFirstName`, `h`.`ContactPersonLastName`, `h`.`Location`, `h`.`Name`
+FROM `Hotels` AS `h`
+LIMIT @__p_1 OFFSET @__p_0
+2024-10-29 23:50:10.351 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[HotelService.Models.Hotel, HotelService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-10-29 23:50:10.353 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`HotelId`, `c`.`InfoDetails`, `c`.`InfoType`
+FROM `CommunicationInfo` AS `c`
+WHERE `c`.`HotelId` = @__get_Item_0
+2024-10-29 23:50:10.355 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`HotelId`, `c`.`InfoDetails`, `c`.`InfoType`
+FROM `CommunicationInfo` AS `c`
+WHERE `c`.`HotelId` = @__get_Item_0
+2024-10-29 23:50:10.357 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`HotelId`, `c`.`InfoDetails`, `c`.`InfoType`
+FROM `CommunicationInfo` AS `c`
+WHERE `c`.`HotelId` = @__get_Item_0
+2024-10-29 23:50:10.359 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`HotelId`, `c`.`InfoDetails`, `c`.`InfoType`
+FROM `CommunicationInfo` AS `c`
+WHERE `c`.`HotelId` = @__get_Item_0
+2024-10-29 23:50:10.361 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`HotelId`, `c`.`InfoDetails`, `c`.`InfoType`
+FROM `CommunicationInfo` AS `c`
+WHERE `c`.`HotelId` = @__get_Item_0
+2024-10-29 23:50:10.363 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`HotelId`, `c`.`InfoDetails`, `c`.`InfoType`
+FROM `CommunicationInfo` AS `c`
+WHERE `c`.`HotelId` = @__get_Item_0
+2024-10-29 23:50:10.365 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`HotelId`, `c`.`InfoDetails`, `c`.`InfoType`
+FROM `CommunicationInfo` AS `c`
+WHERE `c`.`HotelId` = @__get_Item_0
+2024-10-29 23:50:10.367 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`HotelId`, `c`.`InfoDetails`, `c`.`InfoType`
+FROM `CommunicationInfo` AS `c`
+WHERE `c`.`HotelId` = @__get_Item_0
+2024-10-29 23:50:10.369 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`HotelId`, `c`.`InfoDetails`, `c`.`InfoType`
+FROM `CommunicationInfo` AS `c`
+WHERE `c`.`HotelId` = @__get_Item_0
+2024-10-29 23:50:10.371 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`HotelId`, `c`.`InfoDetails`, `c`.`InfoType`
+FROM `CommunicationInfo` AS `c`
+WHERE `c`.`HotelId` = @__get_Item_0
+2024-10-29 23:50:10.373 +03:00 [INF] Executed action HotelService.Controllers.HotelController.GetHotels (HotelService) in 26.2853ms
+2024-10-29 23:50:10.373 +03:00 [INF] Executed endpoint 'HotelService.Controllers.HotelController.GetHotels (HotelService)'
+2024-10-29 23:50:10.374 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/api/Hotel?page=1&pageSize=10 - - - 200 - application/json;+charset=utf-8 30.6378ms
+2024-10-29 23:50:24.719 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5000/api/CommunicationInfo/9f7f8752-3b61-421c-b04c-202a78ba9215 application/json 53
+2024-10-29 23:50:24.720 +03:00 [INF] Executing endpoint 'HotelService.Controllers.CommunicationInfoController.AddCommunicationInfo (HotelService)'
+2024-10-29 23:50:24.722 +03:00 [INF] Route matched with {action = "AddCommunicationInfo", controller = "CommunicationInfo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddCommunicationInfo(System.Guid, HotelService.Controllers.CommunicationInfoDto) on controller HotelService.Controllers.CommunicationInfoController (HotelService).
+2024-10-29 23:50:24.726 +03:00 [INF] Entity Framework Core 6.0.30 initialized 'HotelDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.2' with options: using lazy loading proxies ServerVersion 8.0.27-mysql 
+2024-10-29 23:50:24.728 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `h`.`Id`, `h`.`CompanyTitle`, `h`.`ContactPersonFirstName`, `h`.`ContactPersonLastName`, `h`.`Location`, `h`.`Name`
+FROM `Hotels` AS `h`
+WHERE `h`.`Id` = @__get_Item_0
+LIMIT 1
+2024-10-29 23:50:24.733 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `CommunicationInfo` (`Id`, `HotelId`, `InfoDetails`, `InfoType`)
+VALUES (@p0, @p1, @p2, @p3);
+2024-10-29 23:50:24.740 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Guid, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-10-29 23:50:24.742 +03:00 [INF] Executed action HotelService.Controllers.CommunicationInfoController.AddCommunicationInfo (HotelService) in 18.513ms
+2024-10-29 23:50:24.743 +03:00 [INF] Executed endpoint 'HotelService.Controllers.CommunicationInfoController.AddCommunicationInfo (HotelService)'
+2024-10-29 23:50:24.744 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5000/api/CommunicationInfo/9f7f8752-3b61-421c-b04c-202a78ba9215 application/json 53 - 200 - application/json;+charset=utf-8 25.2670ms
+2024-10-29 23:50:42.411 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/api/Hotel/9f7f8752-3b61-421c-b04c-202a78ba9215 - -
+2024-10-29 23:50:42.412 +03:00 [INF] Executing endpoint 'HotelService.Controllers.HotelController.GetHotelById (HotelService)'
+2024-10-29 23:50:42.413 +03:00 [INF] Route matched with {action = "GetHotelById", controller = "Hotel"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetHotelById(System.Guid) on controller HotelService.Controllers.HotelController (HotelService).
+2024-10-29 23:50:42.414 +03:00 [INF] Entity Framework Core 6.0.30 initialized 'HotelDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.2' with options: using lazy loading proxies ServerVersion 8.0.27-mysql 
+2024-10-29 23:50:42.417 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `h`.`Id`, `h`.`CompanyTitle`, `h`.`ContactPersonFirstName`, `h`.`ContactPersonLastName`, `h`.`Location`, `h`.`Name`
+FROM `Hotels` AS `h`
+WHERE `h`.`Id` = @__get_Item_0
+LIMIT 1
+2024-10-29 23:50:42.418 +03:00 [INF] Executing OkObjectResult, writing value of type 'Castle.Proxies.HotelProxy'.
+2024-10-29 23:50:42.420 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`HotelId`, `c`.`InfoDetails`, `c`.`InfoType`
+FROM `CommunicationInfo` AS `c`
+WHERE `c`.`HotelId` = @__get_Item_0
+2024-10-29 23:50:42.422 +03:00 [INF] Executed action HotelService.Controllers.HotelController.GetHotelById (HotelService) in 8.1826ms
+2024-10-29 23:50:42.423 +03:00 [INF] Executed endpoint 'HotelService.Controllers.HotelController.GetHotelById (HotelService)'
+2024-10-29 23:50:42.424 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/api/Hotel/9f7f8752-3b61-421c-b04c-202a78ba9215 - - - 200 - application/json;+charset=utf-8 12.8983ms
+2024-10-29 23:50:56.557 +03:00 [INF] Request starting HTTP/2 DELETE https://localhost:5000/api/CommunicationInfo/08dcf85b-4ffa-4903-8d8b-5c47731af7b0 - -
+2024-10-29 23:50:56.558 +03:00 [INF] Executing endpoint 'HotelService.Controllers.CommunicationInfoController.DeleteCommunicationInfo (HotelService)'
+2024-10-29 23:50:56.561 +03:00 [INF] Route matched with {action = "DeleteCommunicationInfo", controller = "CommunicationInfo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteCommunicationInfo(System.Guid) on controller HotelService.Controllers.CommunicationInfoController (HotelService).
+2024-10-29 23:50:56.570 +03:00 [INF] Entity Framework Core 6.0.30 initialized 'HotelDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.2' with options: using lazy loading proxies ServerVersion 8.0.27-mysql 
+2024-10-29 23:50:56.579 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`HotelId`, `c`.`InfoDetails`, `c`.`InfoType`
+FROM `CommunicationInfo` AS `c`
+WHERE `c`.`Id` = @__get_Item_0
+LIMIT 1
+2024-10-29 23:50:56.584 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM `CommunicationInfo`
+WHERE `Id` = @p0;
+SELECT ROW_COUNT();
+2024-10-29 23:50:56.591 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2024-10-29 23:50:56.592 +03:00 [INF] Executed action HotelService.Controllers.CommunicationInfoController.DeleteCommunicationInfo (HotelService) in 26.1878ms
+2024-10-29 23:50:56.593 +03:00 [INF] Executed endpoint 'HotelService.Controllers.CommunicationInfoController.DeleteCommunicationInfo (HotelService)'
+2024-10-29 23:50:56.594 +03:00 [INF] Request finished HTTP/2 DELETE https://localhost:5000/api/CommunicationInfo/08dcf85b-4ffa-4903-8d8b-5c47731af7b0 - - - 200 - text/plain;+charset=utf-8 36.8941ms
+2024-10-29 23:51:03.629 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5000/api/Hotel/9f7f8752-3b61-421c-b04c-202a78ba9215 - -
+2024-10-29 23:51:03.631 +03:00 [INF] Executing endpoint 'HotelService.Controllers.HotelController.GetHotelById (HotelService)'
+2024-10-29 23:51:03.632 +03:00 [INF] Route matched with {action = "GetHotelById", controller = "Hotel"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetHotelById(System.Guid) on controller HotelService.Controllers.HotelController (HotelService).
+2024-10-29 23:51:03.637 +03:00 [INF] Entity Framework Core 6.0.30 initialized 'HotelDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.2' with options: using lazy loading proxies ServerVersion 8.0.27-mysql 
+2024-10-29 23:51:03.644 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `h`.`Id`, `h`.`CompanyTitle`, `h`.`ContactPersonFirstName`, `h`.`ContactPersonLastName`, `h`.`Location`, `h`.`Name`
+FROM `Hotels` AS `h`
+WHERE `h`.`Id` = @__get_Item_0
+LIMIT 1
+2024-10-29 23:51:03.647 +03:00 [INF] Executing OkObjectResult, writing value of type 'Castle.Proxies.HotelProxy'.
+2024-10-29 23:51:03.649 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`HotelId`, `c`.`InfoDetails`, `c`.`InfoType`
+FROM `CommunicationInfo` AS `c`
+WHERE `c`.`HotelId` = @__get_Item_0
+2024-10-29 23:51:03.651 +03:00 [INF] Executed action HotelService.Controllers.HotelController.GetHotelById (HotelService) in 16.0027ms
+2024-10-29 23:51:03.653 +03:00 [INF] Executed endpoint 'HotelService.Controllers.HotelController.GetHotelById (HotelService)'
+2024-10-29 23:51:03.654 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5000/api/Hotel/9f7f8752-3b61-421c-b04c-202a78ba9215 - - - 200 - application/json;+charset=utf-8 24.3100ms
+2024-10-29 23:51:12.328 +03:00 [INF] Application is shutting down...

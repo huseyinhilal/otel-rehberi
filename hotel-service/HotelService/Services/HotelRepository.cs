@@ -71,9 +71,13 @@ namespace HotelService.Services
                 .ToListAsync();
         }
 
-        public Task<IEnumerable<Hotel>> GetAllHotelsAsync(int page, int pageSize)
+        public async Task<IEnumerable<Hotel>> GetAllHotelsAsync(int page, int pageSize)
         {
-            throw new NotImplementedException();
+            return await _context.Hotels
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
         }
+
     }
 }
