@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.OpenApi.Models;
+using HotelService.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -96,6 +97,7 @@ builder.Services.AddDbContext<HotelDbContext>(options =>
 // Dependency Injection 
 builder.Services.AddScoped<HotelRepository>();
 
+builder.Services.AddScoped<IHotelRepository, HotelRepository>();
 
 var app = builder.Build();
 

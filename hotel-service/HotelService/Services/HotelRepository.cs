@@ -3,10 +3,11 @@ using HotelService.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using HotelService.Interfaces;
 
 namespace HotelService.Services
 {
-    public class HotelRepository
+    public class HotelRepository : IHotelRepository
     {
         private readonly HotelDbContext _context;
 
@@ -58,6 +59,21 @@ namespace HotelService.Services
             await _context.SaveChangesAsync();
             return true;
         }
+        public async Task<Hotel?> GetHotelByIdAsync(Guid id)
+        {
+            return await _context.Hotels.FindAsync(id);
+        }
 
+        public async Task<IEnumerable<Hotel>> GetHotelsByLocationAsync(string location)
+        {
+            return await _context.Hotels
+                .Where(h => h.Location == location)
+                .ToListAsync();
+        }
+
+        public Task<IEnumerable<Hotel>> GetAllHotelsAsync(int page, int pageSize)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

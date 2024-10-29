@@ -1,10 +1,9 @@
-﻿using HotelService.Data;
+﻿using HotelService.Interfaces;
 using HotelService.Models;
-using HotelService.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Serilog;
+using System;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace HotelService.Controllers
@@ -13,38 +12,20 @@ namespace HotelService.Controllers
     [Route("api/[controller]")]
     public class HotelController : ControllerBase
     {
-        private readonly HotelRepository _hotelRepository;
-        private readonly HotelDbContext _context;
+        private readonly IHotelRepository _hotelRepository;
 
-        public HotelController(HotelDbContext context, HotelRepository hotelRepository)
+        public HotelController(IHotelRepository hotelRepository)
         {
-            _context = context;
             _hotelRepository = hotelRepository;
         }
-
 
         // List all hotels
         [HttpGet]
         public async Task<IActionResult> GetHotels(int page = 1, int pageSize = 10)
         {
-            var totalRecords = await _context.Hotels.CountAsync();
-            var hotels = await _context.Hotels
-                .Skip((page - 1) * pageSize)
-                .Take(pageSize)
-                .ToListAsync();
-
-            var response = new
-            {
-                TotalRecords = totalRecords,
-                Page = page,
-                PageSize = pageSize,
-                TotalPages = (int)Math.Ceiling(totalRecords / (double)pageSize),
-                Hotels = hotels
-            };
-
+            var response = await _hotelRepository.GetAllHotelsAsync(page, pageSize);
             return Ok(response);
         }
-
 
         // Create new hotel
         [Authorize]
@@ -55,7 +36,7 @@ namespace HotelService.Controllers
             return CreatedAtAction(nameof(GetHotels), new { id = hotel.Id }, hotel);
         }
 
-        //update hotel
+        // Update hotel
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateHotel(Guid id, [FromBody] Hotel updatedHotel)
         {
@@ -63,7 +44,7 @@ namespace HotelService.Controllers
             return NoContent();
         }
 
-        //delete hotel
+        // Delete hotel
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteHotel(Guid id)
         {
@@ -75,7 +56,7 @@ namespace HotelService.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetHotelById(Guid id)
         {
-            var hotel = await _context.Hotels.FindAsync(id);
+            var hotel = await _hotelRepository.GetHotelByIdAsync(id);
             if (hotel == null) return NotFound();
             return Ok(hotel);
         }
@@ -89,11 +70,7 @@ namespace HotelService.Controllers
                 return BadRequest("Location parametresi zorunludur.");
             }
 
-            // Veritabanından ilgili konuma ait otelleri getirir
-            var hotels = await _context.Hotels
-                                       .Where(h => h.Location == location)
-                                       .ToListAsync();
-
+            var hotels = await _hotelRepository.GetHotelsByLocationAsync(location);
             if (hotels == null || !hotels.Any())
             {
                 return NotFound($"'{location}' konumunda otel bulunamadı.");
@@ -102,5 +79,4 @@ namespace HotelService.Controllers
             return Ok(hotels);
         }
     }
-
 }
