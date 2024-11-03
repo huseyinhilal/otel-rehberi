@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using ReportService.Data;
 using ReportService.Models;
 using ReportService.Services;
+using Serilog;
 
 namespace ReportService.Controllers
 {
@@ -12,62 +13,38 @@ namespace ReportService.Controllers
     {
         private readonly ReportDbContext _dbContext;
         private readonly RabbitMQProducerService _rabbitMQProducer;
+        private readonly ReportServiceT _reportService;
 
-        public ReportController(ReportDbContext dbContext, RabbitMQProducerService rabbitMQProducer)
+        public ReportController(ReportDbContext dbContext, RabbitMQProducerService rabbitMQProducer, ReportServiceT reportService)
         {
             _dbContext = dbContext;
             _rabbitMQProducer = rabbitMQProducer;
+            _reportService = reportService;
         }
 
-       
+
         [HttpPost("bylocation")]
         public async Task<IActionResult> RequestReportByLocation([FromBody] string location)
         {
-            if (string.IsNullOrEmpty(location))
-            {
-                return BadRequest("Konum bilgisi zorunludur.");
-            }
-
-            var reportId = Guid.NewGuid();
-            // Raporu hemen "Hazırlanıyor" durumuyla kaydediyoruz
-            var report = new Report
-            {
-                Id=reportId,
-                Location = location,
-                Status = "Hazırlanıyor", // İlk durum "Hazırlanıyor"
-                RequestedAt = DateTime.Now
-            };
-
-            _dbContext.Reports.Add(report);
-            await _dbContext.SaveChangesAsync(); // Veritabanına kaydediyoruz
-
-
-            // RabbitMQ kuyruğuna rapor isteğini gönder
-            _rabbitMQProducer.SendReportToQueue(reportId, location);
-
-            return Ok(new { Message = "Rapor oluşturma isteği kuyruğa gönderildi.", Location = location });
+            var reportId = await _reportService.CreateReportByLocationAsync(location);
+            return Ok(new { Message = "Rapor oluşturma isteği kuyruğa gönderildi.", Location = location, ReportId = reportId });
         }
 
         [HttpGet]
         public async Task<IActionResult> GetReports()
         {
-            var reports = await _dbContext.Reports.ToListAsync();
+            var reports = await _reportService.GetReportsAsync();
             return Ok(reports);
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetReportById(Guid id)
         {
-            // Veritabanından ReportId'ye göre raporu bul
-            var report = await _dbContext.Reports.FirstOrDefaultAsync(r => r.Id == id);
-
-            // Eğer rapor bulunamazsa 404 döndür
+            var report = await _reportService.GetReportByIdAsync(id);
             if (report == null)
             {
                 return NotFound(new { Message = "Rapor bulunamadı." });
             }
-
-            // Raporu başarıyla döndür
             return Ok(report);
         }
     }
