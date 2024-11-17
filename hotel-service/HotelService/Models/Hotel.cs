@@ -28,8 +28,6 @@ namespace HotelService.Models
         public string CompanyTitle { get; set; }
 
 
-        //public ICollection<CommunicationInfo> CommunicationInfos { get; set; }
-
         // Lazy loading 
         public virtual ICollection<CommunicationInfo> ?CommunicationInfos { get; set; }
     }

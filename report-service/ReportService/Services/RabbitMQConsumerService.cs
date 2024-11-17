@@ -49,11 +49,11 @@ namespace ReportService.Services
                 }
 
                 Guid reportId = Guid.Empty;
-                // ReportId kontrolü ve parse işlemi
+                // ReportId validation and parsing
                 if (reportRequest?.ReportId == null || !Guid.TryParse((string)reportRequest.ReportId.ToString(), out reportId))
                 {
-                    Console.WriteLine("ReportId geçersiz veya null: " + reportRequest?.ReportId);
-                    return; // ReportId null veya geçersizse işlemi durdur.
+                    Console.WriteLine("ReportId is null or invalid: " + reportRequest?.ReportId);
+                    return; // Stop the process if ReportId is null or invalid.
                 }
 
                 var location = (string)reportRequest.Location;
@@ -61,15 +61,15 @@ namespace ReportService.Services
                 using var scope = _scopeFactory.CreateScope();
                 var dbContext = scope.ServiceProvider.GetRequiredService<ReportDbContext>();
 
-                // Mevcut raporu veritabanında bul (yeni rapor oluşturmak yerine)
+                // Find the existing report in the database (instead of creating a new one)
                 var reportInDb = await dbContext.Reports.FindAsync(reportId);
                 if (reportInDb == null)
                 {
-                    Console.WriteLine($"Rapor veritabanında bulunamadı: {reportId}");
+                    Console.WriteLine($"Report not found in the database: {reportId}");
                     return;
                 }
 
-                // HotelService'ten otel bilgilerini al
+                // Retrieve hotel information from HotelService
                 var hotels = await _hotelServiceClient.GetHotelsByLocation(location);
 
                 if (hotels == null || !hotels.Any())
@@ -78,18 +78,18 @@ namespace ReportService.Services
                     return;
                 }
 
-                // Raporu güncelle
+                // Update the report
                 reportInDb.HotelCount = hotels.Count;
-                //reportInDb.ContactInfoCount = hotels.Sum(h => h.ContactInfo.Length); // İletişim bilgileri sayısı
-                reportInDb.Status = "Tamamlandı"; // Raporu tamamlanmış olarak işaretle
+                //reportInDb.ContactInfoCount = hotels.Sum(h => h.ContactInfo.Length); 
+                reportInDb.Status = "Completed"; // Mark the report as Completed
 
-                // Simüle edilmiş kısa bekleme
+                // Simulated short delay
                 await Task.Delay(5000, stoppingToken);
 
                 await dbContext.SaveChangesAsync();
-                Console.WriteLine($"Rapor güncellendi ve tamamlandı: {reportInDb.Id}");
+                Console.WriteLine($"The report has been updated and completed: {reportInDb.Id}");
 
-                // Mesajı onayla
+                // Acknowledge the message
                 channel.BasicAck(deliveryTag: ea.DeliveryTag, multiple: false);
             };
 
@@ -97,7 +97,7 @@ namespace ReportService.Services
             {
                 channel.BasicConsume(queue: "report_queue", autoAck: false, consumer: consumer);
 
-                // Kısa bekleme
+                // Short delay
                 await Task.Delay(1000, stoppingToken);
             }
         }

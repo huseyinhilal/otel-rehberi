@@ -14,7 +14,7 @@ namespace ReportService.Services
             _httpClient = httpClient;
         }
 
-        // Belirtilen konuma göre HotelService'ten otel bilgilerini alır
+        // Retrieves hotel information from HotelService for the specified location
         public async Task<List<Hotel>> GetHotelsByLocation(string location)
         {
             try
@@ -26,13 +26,11 @@ namespace ReportService.Services
                 };
 
 
-                // HotelService'teki GetByLocation endpoint'ine istek yapıyoruz
+                // Sending a request to the GetByLocation endpoint in HotelService
                 var response = await _httpClient.GetAsync($"https://localhost:5000/api/hotel/bylocation?location={location}");
 
-                // İstek başarısız olursa exception fırlat
                 response.EnsureSuccessStatusCode();
 
-                // Gelen cevabı List<Hotel> türüne deserialize et
                 var hotels = await response.Content.ReadAsStringAsync();
                 var hotelsData = JsonSerializer.Deserialize<List<Hotel>>(hotels, options);
 
@@ -40,8 +38,9 @@ namespace ReportService.Services
             }
             catch (HttpRequestException ex)
             {
-                Console.WriteLine($"HotelService'e istek yapılırken hata oluştu: {ex.Message}");
-                return new List<Hotel>(); // Hata durumunda boş bir otel listesi döner
+                Console.WriteLine($"An Error occured while sending request to HotelService: {ex.Message}");
+                return new List<Hotel>(); // Returns an empty list of hotels in case of an error
+
             }
         }
     }

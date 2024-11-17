@@ -22,14 +22,18 @@ public class ExceptionMiddleware
         }
     }
 
-    private static Task HandleExceptionAsync(HttpContext context, Exception exception)
+    private static Task HandleExceptionAsync(HttpContext context, Exception ex)
     {
-        Log.Error("An error occurred: {Message}", exception.Message);
+        // Loglama
+        Console.WriteLine($"ERROR: {ex.Message}, StackTrace: {ex.StackTrace}");
 
         context.Response.ContentType = "application/json";
         context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
 
-        var response = new { Message = "Bir hata oluştu. Lütfen daha sonra tekrar deneyin." };
-        return context.Response.WriteAsJsonAsync(response);
+        return context.Response.WriteAsync(new
+        {
+            message = "An error occured!",
+            error = ex.Message 
+        }.ToString());
     }
 }

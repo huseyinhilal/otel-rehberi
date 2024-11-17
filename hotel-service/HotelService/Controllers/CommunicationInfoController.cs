@@ -17,53 +17,53 @@ namespace HotelService.Controllers
             _dbContext = dbContext;
         }
 
-        // CommunicationInfo ekleme
+        // Add CommunicationInfo
         [HttpPost("{hotelId}")]
         public async Task<IActionResult> AddCommunicationInfo(Guid hotelId, [FromBody] CommunicationInfoDto communicationInfoDto)
         {
-            // Otel var mı kontrol et
+            // Check if the hotel exists
             var hotel = await _dbContext.Hotels.FindAsync(hotelId);
             if (hotel == null)
             {
-                return NotFound(new { Message = "Otel bulunamadı." });
+                return NotFound(new { Message = "Hotel not found." });
             }
 
             var communicationInfo = new CommunicationInfo
             {
-                HotelId = hotelId, // Otel ile ilişkilendir
+                HotelId = hotelId, // Associate with the hotel
                 InfoType = communicationInfoDto.InfoType,
                 InfoDetails = communicationInfoDto.InfoDetails
             };
 
-            // Veritabanına kaydet
+            // Save to the database
             _dbContext.CommunicationInfo.Add(communicationInfo);
             await _dbContext.SaveChangesAsync();
 
-            return Ok(new { Message = "İletişim bilgisi başarıyla eklendi.", CommunicationInfoId = communicationInfo.Id });
+            return Ok(new { Message = "Communication info added successfully.", CommunicationInfoId = communicationInfo.Id });
         }
 
-        // CommunicationInfo silme
+        // Delete CommunicationInfo
         [HttpDelete("{communicationInfoId}")]
         public async Task<IActionResult> DeleteCommunicationInfo(Guid communicationInfoId)
         {
             try
             {
-                // İletişim bilgisini bul
+                // Find the communication info
                 var communicationInfo = await _dbContext.CommunicationInfo.FindAsync(communicationInfoId);
                 if (communicationInfo == null)
                 {
-                    return NotFound($"ID'si {communicationInfoId} olan iletişim bilgisi bulunamadı.");
+                    return NotFound($"Communication info with ID {communicationInfoId} not found.");
                 }
 
-                // İletişim bilgisini veritabanından sil
+                // Delete the communication info from the database
                 _dbContext.CommunicationInfo.Remove(communicationInfo);
                 await _dbContext.SaveChangesAsync();
 
-                return Ok($"ID'si {communicationInfoId} olan iletişim bilgisi başarıyla silindi.");
+                return Ok($"Communication info with ID {communicationInfoId} deleted successfully.");
             }
             catch (Exception ex)
             {
-                // Loglama ve hata döndürme
+                // Log and return the error
                 Log.Error("ERROR:DeleteCommunicationInfo - An error occurred while deleting communication info: {ErrorMessage}", ex.Message);
                 return StatusCode(500, "ERROR:DeleteCommunicationInfo.");
             }
@@ -72,7 +72,7 @@ namespace HotelService.Controllers
 
     public class CommunicationInfoDto
     {
-        public string InfoType { get; set; } // İletişim türü (Telefon, Email, vs.)
-        public string InfoDetails { get; set; } // İletişim bilgisi (Telefon numarası, Email, vs.)
+        public string InfoType { get; set; } // Communication type (Phone, Email, etc.)
+        public string InfoDetails { get; set; } // Communication details (Phone number, Email, etc.)
     }
 }

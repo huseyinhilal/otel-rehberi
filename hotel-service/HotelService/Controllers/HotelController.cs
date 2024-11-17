@@ -67,13 +67,13 @@ namespace HotelService.Controllers
         {
             if (string.IsNullOrEmpty(location))
             {
-                return BadRequest("Location parametresi zorunludur.");
+                return BadRequest("Location parameter is required.");
             }
 
             var hotels = await _hotelRepository.GetHotelsByLocationAsync(location);
             if (hotels == null || !hotels.Any())
             {
-                return NotFound($"'{location}' konumunda otel bulunamadı.");
+                return NotFound($"No hotels found at '{location}' location.");
             }
 
             return Ok(hotels);
