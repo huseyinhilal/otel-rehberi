@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ReportService.Data;
+using ReportService.Interfaces;
 using ReportService.Models;
 using ReportService.Services;
 using Serilog;
@@ -13,9 +14,9 @@ namespace ReportService.Controllers
     {
         private readonly ReportDbContext _dbContext;
         private readonly RabbitMQProducerService _rabbitMQProducer;
-        private readonly ReportServiceT _reportService;
+        private readonly IReportServiceT _reportService;
 
-        public ReportController(ReportDbContext dbContext, RabbitMQProducerService rabbitMQProducer, ReportServiceT reportService)
+        public ReportController(ReportDbContext dbContext, RabbitMQProducerService rabbitMQProducer, IReportServiceT reportService)
         {
             _dbContext = dbContext;
             _rabbitMQProducer = rabbitMQProducer;
