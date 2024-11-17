@@ -6,12 +6,12 @@ using ReportService.Models;
 namespace ReportService.Services
 {
     // ReportServiceT.cs
-    public class ReportServiceT : IReportServiceT
+    public class ReportProcessingService : IReportProcessingService
     {
         private readonly ReportDbContext _dbContext;
         private readonly RabbitMQProducerService _rabbitMQProducer;
 
-        public ReportServiceT(ReportDbContext dbContext, RabbitMQProducerService rabbitMQProducer)
+        public ReportProcessingService(ReportDbContext dbContext, RabbitMQProducerService rabbitMQProducer)
         {
             _dbContext = dbContext;
             _rabbitMQProducer = rabbitMQProducer;

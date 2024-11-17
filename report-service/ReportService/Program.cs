@@ -23,7 +23,7 @@ builder.Services.AddHostedService<RabbitMQConsumerService>(); // Consumer servis
 builder.Services.AddHttpClient<HotelServiceClient>();
 
 // Add custom services
-builder.Services.AddScoped<IReportServiceT, ReportServiceT>();
+builder.Services.AddScoped<IReportProcessingService, ReportProcessingService>();
 
 var app = builder.Build();
 

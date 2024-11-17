@@ -2,7 +2,7 @@
 
 namespace ReportService.Interfaces
 {
-    public interface IReportServiceT
+    public interface IReportProcessingService
     {
         Task<Guid> CreateReportByLocationAsync(string location);
         Task<List<Report>> GetReportsAsync();

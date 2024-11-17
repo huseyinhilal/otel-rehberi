@@ -14,9 +14,9 @@ namespace ReportService.Controllers
     {
         private readonly ReportDbContext _dbContext;
         private readonly RabbitMQProducerService _rabbitMQProducer;
-        private readonly IReportServiceT _reportService;
+        private readonly IReportProcessingService _reportService;
 
-        public ReportController(ReportDbContext dbContext, RabbitMQProducerService rabbitMQProducer, IReportServiceT reportService)
+        public ReportController(ReportDbContext dbContext, RabbitMQProducerService rabbitMQProducer, IReportProcessingService reportService)
         {
             _dbContext = dbContext;
             _rabbitMQProducer = rabbitMQProducer;
