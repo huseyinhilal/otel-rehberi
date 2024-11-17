@@ -24,10 +24,10 @@ namespace HotelService.Services
         public async Task<bool> AddHotelAsync(Hotel hotel)
         {
             if (hotel == null)
-                throw new ArgumentNullException(nameof(hotel), "Hotel bilgisi boş olamaz.");
+                throw new ArgumentNullException(nameof(hotel), "Hotel information cannot be null.");
 
             if (string.IsNullOrWhiteSpace(hotel.Name) || string.IsNullOrWhiteSpace(hotel.Location))
-                throw new ArgumentException("Hotel adı ve lokasyon bilgisi boş olamaz.");
+                throw new ArgumentException("Hotel name and location information cannot be empty.");
 
             _context.Hotels.Add(hotel);
             await _context.SaveChangesAsync();
@@ -38,7 +38,7 @@ namespace HotelService.Services
         {
             var hotel = await _context.Hotels.FindAsync(id);
             if (hotel == null)
-                throw new KeyNotFoundException("Güncellenmek istenen otel bulunamadı.");
+                throw new KeyNotFoundException("The hotel to be updated was not found.");
 
             hotel.Name = updatedHotel.Name;
             hotel.Location = updatedHotel.Location;
@@ -53,7 +53,7 @@ namespace HotelService.Services
         {
             var hotel = await _context.Hotels.FindAsync(id);
             if (hotel == null)
-                throw new KeyNotFoundException("Silinmek istenen otel bulunamadı.");
+                throw new KeyNotFoundException("The hotel to be deleted was not found.");
 
             _context.Hotels.Remove(hotel);
             await _context.SaveChangesAsync();

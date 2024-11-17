@@ -12,8 +12,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 //Serilog
 Log.Logger = new LoggerConfiguration()
-    .WriteTo.Console() // Log to console
-    .WriteTo.File("logs/log.txt", rollingInterval: RollingInterval.Day) // Log to file
+    .WriteTo.Console()
+    .WriteTo.File("logs/log.txt", rollingInterval: RollingInterval.Day)
     .CreateLogger();
 
 //use Serilog
@@ -39,16 +39,15 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-// Add services to the container.
+
     builder.Services.AddControllers()
     .AddJsonOptions(options =>
      {
          options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
-         options.JsonSerializerOptions.MaxDepth = 64; // Gerekirse derinliği artırabiliriz
+         options.JsonSerializerOptions.MaxDepth = 64; 
      });
 
 
-// Swagger/OpenAPI
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerGen(c =>
@@ -87,7 +86,7 @@ builder.Services.AddSwaggerGen(c =>
 
 // Database connection
 builder.Services.AddDbContext<HotelDbContext>(options =>
-    options.UseLazyLoadingProxies() // Lazy loading
+    options.UseLazyLoadingProxies()
            .UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
                      new MySqlServerVersion(new Version(8, 0, 27))));
 
@@ -110,7 +109,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseAuthentication();//authentication added
+app.UseAuthentication();
 app.UseAuthorization(); 
 
 app.MapControllers();

@@ -25,14 +25,14 @@ public class ExceptionMiddleware
     private static Task HandleExceptionAsync(HttpContext context, Exception ex)
     {
         // Loglama
-        Console.WriteLine($"Hata: {ex.Message}, StackTrace: {ex.StackTrace}");
+        Console.WriteLine($"ERROR: {ex.Message}, StackTrace: {ex.StackTrace}");
 
         context.Response.ContentType = "application/json";
         context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
 
         return context.Response.WriteAsync(new
         {
-            message = "Bir hata oluştu. Lütfen daha sonra tekrar deneyin.",
+            message = "An error occured!",
             error = ex.Message 
         }.ToString());
     }

@@ -5,7 +5,6 @@ using ReportService.Models;
 
 namespace ReportService.Services
 {
-    // ReportServiceT.cs
     public class ReportProcessingService : IReportProcessingService
     {
         private readonly ReportDbContext _dbContext;
@@ -20,14 +19,14 @@ namespace ReportService.Services
         public async Task<Guid> CreateReportByLocationAsync(string location)
         {
             if (string.IsNullOrEmpty(location))
-                throw new ArgumentException("Konum bilgisi zorunludur.");
+                throw new ArgumentException("Location information is required.");
 
             var reportId = Guid.NewGuid();
             var report = new Report
             {
                 Id = reportId,
                 Location = location,
-                Status = "Hazırlanıyor",
+                Status = "Preparing",
                 RequestedAt = DateTime.Now
             };
 

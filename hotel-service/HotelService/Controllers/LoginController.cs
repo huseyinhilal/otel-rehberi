@@ -19,7 +19,6 @@ public class LoginController : ControllerBase
     [HttpPost("login")]
     public IActionResult Login([FromBody] Login login)
     {
-        // Bu sadece basit bir örnek; gerçek uygulamada kimlik doğrulama yapmanız gerekir.
         if (login.Username == "test" && login.Password == "password")
         {
             var tokenHandler = new JwtSecurityTokenHandler();

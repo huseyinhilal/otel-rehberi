@@ -9,7 +9,7 @@ namespace HotelService.Models
         public string InfoType { get; set; }
         public string InfoDetails { get; set; }
 
-        [JsonIgnore] // Döngüyü önlemek için
+        [JsonIgnore]
         public virtual Hotel? Hotel { get; set; }//lazy load
     }
 

@@ -28,7 +28,7 @@ namespace ReportService.Controllers
         public async Task<IActionResult> RequestReportByLocation([FromBody] string location)
         {
             var reportId = await _reportService.CreateReportByLocationAsync(location);
-            return Ok(new { Message = "Rapor oluşturma isteği kuyruğa gönderildi.", Location = location, ReportId = reportId });
+            return Ok(new { Message = "Report creation request sent to queue.", Location = location, ReportId = reportId });
         }
 
         [HttpGet]
@@ -44,7 +44,7 @@ namespace ReportService.Controllers
             var report = await _reportService.GetReportByIdAsync(id);
             if (report == null)
             {
-                return NotFound(new { Message = "Rapor bulunamadı." });
+                return NotFound(new { Message = "Report not found" });
             }
             return Ok(report);
         }

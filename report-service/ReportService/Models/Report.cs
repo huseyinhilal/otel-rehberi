@@ -18,7 +18,7 @@ namespace ReportService.Models
 
         public DateTime RequestedAt { get; set; } = DateTime.UtcNow;
 
-        public string Status { get; set; } = "Hazırlanıyor"; // Hazırlanıyor -> Tamamlandı
+        public string Status { get; set; } = "Preparing"; 
     }
 
 }
